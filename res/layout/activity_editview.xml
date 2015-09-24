@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/user_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/username_text"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:ems="9"
+        android:hint="@string/hint_name_text"
+        android:inputType="text"
+        android:paddingLeft="60dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/password_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_name_text"
+        android:layout_marginTop="20dp"
+        
+        android:text="@string/password_text"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/password_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/name_edit_text"
+        android:layout_marginTop="10dp"
+        android:ems="9"
+        android:paddingLeft="60dp"
+        android:hint="@string/hint_password_text"
+        android:inputType="textPassword"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/find_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password_edit_text"
+        android:layout_marginTop="10dp"
+        android:autoLink="all"
+        android:text="@string/find_password_text"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/button_sure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/find_password"
+        android:layout_marginTop="10dp"
+        android:text="@string/button_sure_text" />
+
+    <Button
+        android:id="@+id/button_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_sure"
+        android:text="@string/button_register_text" />
+
+    <ImageView 
+        android:id="@+id/image"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@id/password_edit_text"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="30dp"
+        android:src="@drawable/va"
+        />
+    <TextView android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/image"
+        android:text="@string/hint_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/del_btn_2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/password_text"
+        android:background="@drawable/nk" />
+
+    <Button
+        android:id="@+id/del_btn_1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@id/user_name_text"
+        android:layout_alignBottom="@id/user_name_text"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/nk" />
+
+</RelativeLayout>

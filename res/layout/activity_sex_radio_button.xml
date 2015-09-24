@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/system_text"/>
+    <RadioGroup
+        android:id="@+id/sex_radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <!-- android:checked="true" 设置默认选中 -->
+        <RadioButton
+            android:id="@+id/man_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/man_radio" 
+             android:textSize="20sp"/>
+        <RadioButton
+            android:id="@+id/woman_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/woman_radio" 
+             android:textSize="20sp"/>
+    </RadioGroup>
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/own_text"/>
+    
+    <RadioGroup
+        android:id="@+id/sex_2_radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:id="@+id/man_2_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/man_radio" 
+            android:background="@drawable/sex_button_selector"
+            android:gravity="center"
+            android:button="@null"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+           />
+
+        <RadioButton
+            android:id="@+id/woman_2_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sex_button_selector"
+            android:text="@string/woman_radio"
+            android:gravity="center"
+            android:button="@null" 
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"/>
+    </RadioGroup>
+    
+</LinearLayout>

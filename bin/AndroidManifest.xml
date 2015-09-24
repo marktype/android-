@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.layout"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="14" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.test.TestActivityList"
+            android:label="@string/app_name" 
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.layout.LayoutAll"/>
+        <activity android:name="com.example.layout.TestLinearlayout"/>
+        <activity android:name="com.example.layout.TestRelative"/>
+        <activity android:name="com.example.layout.TestRelativelayout"/>
+        <activity android:name="com.example.ui.widget.Marquee_Test"/>
+        <activity android:name="com.example.ui.widget.TwoMarquee_Test"/>
+         <activity android:name="com.example.ui.widget.Button_color"/>
+         <activity android:name="com.example.layout.TestCodeActvity"/>
+         <activity android:name="com.example.ui.widget.EidtViewTest"
+             android:label="@string/weixin_text"
+             android:icon="@drawable/icon"/>
+          <activity android:name="com.example.ui.widget.EventButton"/>
+          <activity android:name="com.example.ui.widget.ImageViewTest"
+              />
+          <activity android:name="com.example.ui.widget.SexRadioButton"/>
+           <activity android:name="com.example.ui.widget.CheckBoxTest"/>
+            <activity android:name="com.example.ui.widget.Logcat_Switch"/>
+            <activity android:name="com.example.ui.widget.Button_Image"/>
+             <activity android:name="com.example.activity.SaveInstanceTest"/>
+    </application>
+
+</manifest>
