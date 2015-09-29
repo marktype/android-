@@ -65,13 +65,6 @@
         android:layout_marginTop="10dp"
         android:text="@string/button_sure_text" />
 
-    <Button
-        android:id="@+id/button_register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button_sure"
-        android:text="@string/button_register_text" />
-
     <ImageView 
         android:id="@+id/image"
         android:layout_alignParentBottom="true"
@@ -105,5 +98,13 @@
         android:layout_alignBottom="@id/user_name_text"
         android:layout_alignParentRight="true"
         android:background="@drawable/nk" />
+
+    <Button
+        android:id="@+id/button_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/button_sure"
+        android:text="@string/button_register_text" />
 
 </RelativeLayout>

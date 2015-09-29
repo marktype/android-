@@ -15,33 +15,45 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.test.TestActivityList"
-            android:label="@string/app_name" 
-            >
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.layout.LayoutAll"/>
-        <activity android:name="com.example.layout.TestLinearlayout"/>
-        <activity android:name="com.example.layout.TestRelative"/>
-        <activity android:name="com.example.layout.TestRelativelayout"/>
-        <activity android:name="com.example.ui.widget.Marquee_Test"/>
-        <activity android:name="com.example.ui.widget.TwoMarquee_Test"/>
-         <activity android:name="com.example.ui.widget.Button_color"/>
-         <activity android:name="com.example.layout.TestCodeActvity"/>
-         <activity android:name="com.example.ui.widget.EidtViewTest"
-             android:label="@string/weixin_text"
-             android:icon="@drawable/icon"/>
-          <activity android:name="com.example.ui.widget.EventButton"/>
-          <activity android:name="com.example.ui.widget.ImageViewTest"
-              />
-          <activity android:name="com.example.ui.widget.SexRadioButton"/>
-           <activity android:name="com.example.ui.widget.CheckBoxTest"/>
-            <activity android:name="com.example.ui.widget.Logcat_Switch"/>
-            <activity android:name="com.example.ui.widget.Button_Image"/>
-             <activity android:name="com.example.activity.SaveInstanceTest"/>
+        <activity android:name="com.example.layout.LayoutAll" />
+        <activity android:name="com.example.layout.TestLinearlayout" />
+        <activity android:name="com.example.layout.TestRelative" />
+        <activity android:name="com.example.layout.TestRelativelayout" />
+        <activity android:name="com.example.ui.widget.Marquee_Test" />
+        <activity android:name="com.example.ui.widget.TwoMarquee_Test" />
+        <activity android:name="com.example.ui.widget.Button_color" />
+        <activity android:name="com.example.layout.TestCodeActvity" />
+        <activity
+            android:name="com.example.ui.widget.EidtViewTest"
+            android:icon="@drawable/icon"
+            android:label="@string/weixin_text" />
+        <activity android:name="com.example.ui.widget.EventButton" />
+        <activity android:name="com.example.ui.widget.ImageViewTest" />
+        <activity android:name="com.example.ui.widget.SexRadioButton" />
+        <activity android:name="com.example.ui.widget.CheckBoxTest" />
+        <activity android:name="com.example.ui.widget.Logcat_Switch" />
+        <activity android:name="com.example.ui.widget.Button_Image" />
+        <activity android:name="com.example.activity.SaveInstanceTest" />
+        <activity android:name="com.example.activity.OnStartActivityExtraBundleA" />
+        <activity android:name="com.example.activity.OnStartActivityExtraBundleB" />
+        <activity android:name="com.example.activity.BackValueActivity" />
+        <activity android:name="com.example.activity.IntentCallPhone" />
+        <activity android:name="com.example.activity.IntentDetil" >
+            <intent-filter>
+                <action android:name="com.example.TestAction" />
+                
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+         <activity android:name="com.example.ui.widget.Event_ArrayAdapter" />
+          <activity android:name="com.example.ui.widget.Event_SimpleAdapter" />
     </application>
 
 </manifest>
