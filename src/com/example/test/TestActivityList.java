@@ -21,19 +21,25 @@ import com.example.ui.widget.Event_ArrayAdapter;
 import com.example.ui.widget.Event_SimpleAdapter;
 import com.example.ui.widget.ImageViewTest;
 import com.example.ui.widget.Logcat_Switch;
+import com.example.ui.widget.MyAdpater_Test;
+import com.example.ui.widget.MyPractiveAdapter;
 import com.example.ui.widget.SexRadioButton;
 
 public class TestActivityList extends ListActivity{
 
 	String[] string = {"布局管理","按钮颜色设置","代码写界面","登录界面",
 			"按钮触发事件","图片","单选控件","多选控件","开关按钮",
-			"android自动保存","数据传递(一键退出)","intent测试","Array适配器","Simple适配器"}; 
+			"android自动保存","数据传递(一键退出)","intent测试",
+			"Array适配器","Simple适配器","自定义适配器","仿美团界面"}; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		//记录界面（后面一键退出）
 		ActivityExitAll main = ActivityExitAll.getInstance();
 		main.addActivity(this);
+		
+		
 		
 		
 	ArrayAdapter ap = new ArrayAdapter(this,android.R.layout.simple_list_item_1, string);
@@ -44,7 +50,9 @@ public class TestActivityList extends ListActivity{
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
+		
 		switch (position) {
+		
 		case 0:
 			startActivity(new Intent(this,LayoutAll.class));
 			break;
@@ -86,6 +94,12 @@ public class TestActivityList extends ListActivity{
 			break;
 		case 13:
 			startActivity(new Intent(this,Event_SimpleAdapter.class));
+			break;
+		case 14:
+			startActivity(new Intent(this,MyAdpater_Test.class));
+			break;
+		case 15:
+			startActivity(new Intent(this,MyPractiveAdapter.class));
 			break;
 		}
 	}

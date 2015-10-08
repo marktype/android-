@@ -54,6 +54,8 @@
         </activity>
          <activity android:name="com.example.ui.widget.Event_ArrayAdapter" />
           <activity android:name="com.example.ui.widget.Event_SimpleAdapter" />
+           <activity android:name="com.example.ui.widget.MyAdpater_Test" />
+            <activity android:name="com.example.ui.widget.MyPractiveAdapter" />
     </application>
 
 </manifest>
