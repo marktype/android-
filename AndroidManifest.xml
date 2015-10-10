@@ -52,10 +52,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-         <activity android:name="com.example.ui.widget.Event_ArrayAdapter" />
-          <activity android:name="com.example.ui.widget.Event_SimpleAdapter" />
-           <activity android:name="com.example.ui.widget.MyAdpater_Test" />
-            <activity android:name="com.example.ui.widget.MyPractiveAdapter" />
+         <activity android:name="com.example.ui.adapter.Event_ArrayAdapter" />
+          <activity android:name="com.example.ui.adapter.Event_SimpleAdapter" />
+           <activity android:name="com.example.ui.adapter.MyAdpater_Test" />
+            <activity android:name="com.example.ui.adapter.MyPractiveAdapter" />
+            <activity android:name="com.example.ui.adapter.GridViewAdapter" />
+             <activity android:name="com.example.ui.adapter.GridViewTextAdapter" />
     </application>
 
 </manifest>

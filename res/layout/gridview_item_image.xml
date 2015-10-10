@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    
+<!-- android:src="" 设置的触发颜色为全部变换 自定义selector   同时  Java函数中图片设置为背景资源可使其达到按钮触发效果
+layout_margin 外边距，此时使图片缩放，边框处可见按钮效果，padding 此处无法达到效果
+-->
+    <ImageView
+        android:id="@+id/item_img"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        android:layout_margin="5dp"
+        
+         />
+
+    <TextView android:id="@+id/declare_Txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/color_red"
+        android:layout_gravity="bottom|center_horizontal"
+        />
+</FrameLayout>

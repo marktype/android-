@@ -44,18 +44,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@id/practive_image1_list"
-        android:text="9.9"
-        android:textColor="@android:color/holo_blue_bright"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/yuan_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/describe_list"
-        android:layout_marginTop="15dp"
-        android:layout_toRightOf="@id/price_list"
-        android:text="元" />
+        android:text="9.9元" />
 
     <TextView
         android:id="@+id/price_cut1_list"
@@ -64,21 +53,9 @@
         android:layout_below="@id/describe_list"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="17dp"
-        android:layout_toRightOf="@id/yuan_list"
-       
+        android:layout_toRightOf="@id/price_list"
         android:text="20元"
-        
         android:textSize="12sp" />
-
-    <ImageView
-        android:id="@+id/price_cut2_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/describe_list"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="17dp"
-        android:layout_toRightOf="@id/yuan_list"
-        />
 
     <TextView
         android:id="@+id/grade_list"

@@ -1,4 +1,4 @@
-package com.example.ui.widget;
+package com.example.ui.adapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,15 +1,19 @@
-package com.example.ui.widget;
+package com.example.ui.adapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.zip.Inflater;
 
 import com.example.layout.R;
-import com.example.ui.widget.Event_MyBaseAdapter.ViewHolder;
 
+import android.R.color;
 import android.content.Context;
+import android.graphics.Color;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.text.style.AbsoluteSizeSpan;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.ImageSpan;
 import android.text.style.StrikethroughSpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,7 +65,6 @@ public class PractiveAdapter extends BaseAdapter {
 			viewHolder.title = (TextView) convertView.findViewById(R.id.name_list);
 			viewHolder.descrpe = (TextView) convertView.findViewById(R.id.describe_list);
 			viewHolder.price = (TextView) convertView.findViewById(R.id.price_list);
-			viewHolder.RMB = (TextView) convertView.findViewById(R.id.yuan_list);
 			viewHolder.deletPrice = (TextView) convertView.findViewById(R.id.price_cut1_list);
 			viewHolder.grade = (TextView) convertView.findViewById(R.id.grade_list);
 			convertView.setTag(viewHolder);
@@ -75,7 +78,6 @@ public class PractiveAdapter extends BaseAdapter {
 		String titleTxt = (String) item.get("title");
 		String descTxt = (String) item.get("descripe");
 		String priceTxt = (String) item.get("price");
-		String RMBTxt = (String) item.get("RMB");
 		String deletTxt = (String) item.get("deletprice");
 		String gradeTxt = (String) item.get("grade");
 		
@@ -83,8 +85,7 @@ public class PractiveAdapter extends BaseAdapter {
 		viewHolder.iconImage2.setImageResource(icon2);
 		viewHolder.title.setText(titleTxt);
 		viewHolder.descrpe.setText(descTxt);
-		viewHolder.price.setText(priceTxt);
-		viewHolder.RMB.setText(RMBTxt);
+		viewHolder.price.setText(setSpannableFontAndColor(priceTxt));
 		viewHolder.deletPrice.setText(setSpannableString(deletTxt));
 		viewHolder.grade.setText(gradeTxt);
 		
@@ -103,10 +104,21 @@ public class PractiveAdapter extends BaseAdapter {
 				Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		return string;
 	}
-	
+	public SpannableString setSpannableFontAndColor(CharSequence sequence){
+		SpannableString string = new SpannableString(sequence);
+		
+		//改变字体大小
+		string.setSpan(new AbsoluteSizeSpan(20, true),0, string.length()-1,
+				Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+		//设置字体颜色
+		string.setSpan(new ForegroundColorSpan(Color.GREEN),0, 
+				string.length()-1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+		
+		return string;
+	}
 
 	class ViewHolder{
 		ImageView iconImage1,iconImage2;
-		TextView title,descrpe,price,RMB,deletPrice,grade;
+		TextView title,descrpe,price,deletPrice,grade;
 	}
 }

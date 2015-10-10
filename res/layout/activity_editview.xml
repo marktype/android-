@@ -29,7 +29,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/user_name_text"
         android:layout_marginTop="20dp"
-        
         android:text="@string/password_text"
         android:textSize="20sp" />
 
@@ -41,9 +40,9 @@
         android:layout_below="@id/name_edit_text"
         android:layout_marginTop="10dp"
         android:ems="9"
-        android:paddingLeft="60dp"
         android:hint="@string/hint_password_text"
         android:inputType="textPassword"
+        android:paddingLeft="60dp"
         android:textSize="20sp" />
 
     <TextView
@@ -65,22 +64,23 @@
         android:layout_marginTop="10dp"
         android:text="@string/button_sure_text" />
 
-    <ImageView 
+    <ImageView
         android:id="@+id/image"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@id/password_edit_text"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_alignLeft="@id/password_edit_text"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="30dp"
-        android:src="@drawable/va"
-        />
-    <TextView android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/image"
-        android:text="@string/hint_text"
+        android:src="@drawable/va" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@id/image"
+        android:text="@string/hint_text"
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/del_btn_2"
@@ -106,5 +106,13 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/button_sure"
         android:text="@string/button_register_text" />
+
+    <AutoCompleteTextView
+        android:id="@+id/auto_Txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_register"
+        android:hint="请输入邮箱"
+        android:textSize="20sp" />
 
 </RelativeLayout>
