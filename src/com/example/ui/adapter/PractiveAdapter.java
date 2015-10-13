@@ -15,6 +15,7 @@ import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
 import android.text.style.StrikethroughSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,6 +67,7 @@ public class PractiveAdapter extends BaseAdapter {
 			viewHolder.descrpe = (TextView) convertView.findViewById(R.id.describe_list);
 			viewHolder.price = (TextView) convertView.findViewById(R.id.price_list);
 			viewHolder.deletPrice = (TextView) convertView.findViewById(R.id.price_cut1_list);
+			viewHolder.iconPrice = (ImageView) convertView.findViewById(R.id.price_image_list);
 			viewHolder.grade = (TextView) convertView.findViewById(R.id.grade_list);
 			convertView.setTag(viewHolder);
 		}else {
@@ -79,6 +81,8 @@ public class PractiveAdapter extends BaseAdapter {
 		String descTxt = (String) item.get("descripe");
 		String priceTxt = (String) item.get("price");
 		String deletTxt = (String) item.get("deletprice");
+//		Log.d("tag", "delet--------------->"+deletTxt);
+		int icon3 = (Integer) item.get("iconprice");
 		String gradeTxt = (String) item.get("grade");
 		
 		viewHolder.iconImage1.setImageResource(icon1);
@@ -86,7 +90,17 @@ public class PractiveAdapter extends BaseAdapter {
 		viewHolder.title.setText(titleTxt);
 		viewHolder.descrpe.setText(descTxt);
 		viewHolder.price.setText(setSpannableFontAndColor(priceTxt));
-		viewHolder.deletPrice.setText(setSpannableString(deletTxt));
+		
+		if (!deletTxt.equals("")) {
+			viewHolder.deletPrice.setText(setSpannableString(deletTxt));
+			
+		}
+			viewHolder.iconPrice.setImageResource(icon3);
+			
+		
+			
+		
+		
 		viewHolder.grade.setText(gradeTxt);
 		
 		
@@ -118,7 +132,7 @@ public class PractiveAdapter extends BaseAdapter {
 	}
 
 	class ViewHolder{
-		ImageView iconImage1,iconImage2;
+		ImageView iconImage1,iconImage2,iconPrice;
 		TextView title,descrpe,price,deletPrice,grade;
 	}
 }

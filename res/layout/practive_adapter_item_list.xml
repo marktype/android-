@@ -3,18 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    
     <ImageView
         android:id="@+id/practive_image1_list"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/meituan_image1" />
+        android:src="@drawable/meituan_image1"
+        
+       />
 
     <ImageView
         android:id="@+id/practive_image2_list"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/ic_label_nobooking" />
+        android:src="@drawable/ic_label_nobooking" 
+        />
 
     <TextView
         android:id="@+id/name_list"
@@ -24,7 +28,8 @@
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@id/practive_image1_list"
         android:text="天府美食坊"
-        android:textSize="18sp" />
+        android:textSize="18sp" 
+        />
 
     <TextView
         android:id="@+id/describe_list"
@@ -54,8 +59,18 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="17dp"
         android:layout_toRightOf="@id/price_list"
-        android:text="20元"
+       
         android:textSize="12sp" />
+    <ImageView
+        android:id="@+id/price_image_list"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/describe_list"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="17dp"
+        android:layout_toRightOf="@id/price_list"
+        
+        />
 
     <TextView
         android:id="@+id/grade_list"

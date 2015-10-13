@@ -2,27 +2,33 @@ package com.example.ui.adapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.layout.R;
 
 public class MyPractiveAdapter extends Activity {
-
+	private AutoCompleteTextView mCompleteTextView;
 	private ListView mPtListView;
 	private Spinner mSpinnerlist;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		requestWindowFeature(Window.FEATURE_NO_TITLE);//将题目隐藏
 		
 		ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String,Object>>();
 		setContentView(R.layout.adapter_practive);
@@ -32,19 +38,64 @@ public class MyPractiveAdapter extends Activity {
 		adapter.setList(list);
 		mPtListView.setAdapter(adapter);
 		//=================================
+		/*
+		 * 设置下拉列表
+		 * */
 		setSpannerOne();
 		setSpannerTwo();
 		setSpannerThree();
 		setspannerfour();
+		//====================================
+		/*
+		 * 搜索自动匹配
+		 * */
+		String[] searchTxt = {"m美食","m美女","m美食一条街","m美团外卖","美好","mshfhsd"};
+		mCompleteTextView = (AutoCompleteTextView) findViewById(R.id.search_edit);
+		
+//		String[] from = {"image","result","finally"};
+//		int[] to = {R.id.search_img,R.id.search_result_txt,R.id.search_finally_txt};
+//		ArrayList<HashMap<String, Object>> data = new ArrayList<HashMap<String,Object>>();
+//		setSearchResult(data);
+//		AutoCompleteAdapter searchAdapter = new AutoCompleteAdapter(this, data, 
+//				R.layout.autocomplete_search_item, from, to);
+		
+		
+		
+		ArrayAdapter<String> searchAdapter = new ArrayAdapter<String>(this, 
+				android.R.layout.simple_list_item_1, searchTxt);
+		mCompleteTextView.setThreshold(1);
+		mCompleteTextView.setAdapter(searchAdapter);
 		
 	}
+	
+//	public void setSearchResult(ArrayList<HashMap<String, Object>> data){
+//		HashMap<String, Object> item = new HashMap<String, Object>();
+//		item.put("image", R.drawable.ic_search_green);
+//		item.put("result", "m美食");
+//		item.put("finally", "约有45个团购");
+//		data.add(item);
+//		
+//		item = new HashMap<String, Object>();
+//		item.put("image", R.drawable.ic_search_green);
+//		item.put("result", "m美女");
+//		item.put("finally", "约有45个团购");
+//		data.add(item);
+//		
+//		item = new HashMap<String, Object>();
+//		item.put("image", R.drawable.ic_search_green);
+//		item.put("result", "m美食一条街");
+//		item.put("finally", "约有45个团购");
+//		data.add(item);
+//	}
+	
+	
 	//设置下拉列表1
 	public void setSpannerOne(){
 		String[] spanner1 = {"美食","1","2","3","4"};
 		mSpinnerlist = (Spinner) findViewById(R.id.spinner_1_item);
 		ArrayAdapter adapter2 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, spanner1);
 		mSpinnerlist.setAdapter(adapter2);
-		mSpinnerlist.setSelection(0, false);//默认选中第几个，后面true或false无用
+		mSpinnerlist.setSelection(0, false);//默认选中第几个，从0开始，后面true或false无用
 		mSpinnerlist.setOnItemSelectedListener(new OnItemSelectedListener() {
 
 			@Override
@@ -83,6 +134,9 @@ public class MyPractiveAdapter extends Activity {
 		ArrayAdapter adapter5 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, spanner4);
 		mSpinnerlist.setAdapter(adapter5);
 	}
+	/*
+	 * 数据源设置
+	 * */
 	public void setData(ArrayList<HashMap<String, Object>> list){
 		HashMap<String, Object> item = new HashMap<String, Object>();
 		item.put("iconImage1", R.drawable.meituan_image1);
@@ -92,6 +146,7 @@ public class MyPractiveAdapter extends Activity {
 		item.put("price", "9.9元");
 		item.put("deletprice", "20元");
 		item.put("grade", "4.1分（1200）");
+		item.put("iconprice", R.drawable.ic_action_back);
 		list.add(item);
 		
 		item = new HashMap<String, Object>();
@@ -101,6 +156,7 @@ public class MyPractiveAdapter extends Activity {
 		item.put("descripe", "100元代金券1张，全场通用，可叠加使用");
 		item.put("price", "19.9元");
 		item.put("deletprice", "30元");
+		item.put("iconprice", R.drawable.ic_action_back);
 		item.put("grade", "4.2分（2200）");
 		list.add(item);
 		
@@ -110,7 +166,8 @@ public class MyPractiveAdapter extends Activity {
 		item.put("title", "码头故事（二号桥店）");
 		item.put("descripe", "铁板饭2选1，有赠品，提供免费WiFi");
 		item.put("price", "29.9元");
-		item.put("deletprice", "40元");
+		item.put("deletprice", "");
+		item.put("iconprice", R.drawable.pe);
 		item.put("grade", "4.3分（3200）");
 		list.add(item);
 		
@@ -121,6 +178,7 @@ public class MyPractiveAdapter extends Activity {
 		item.put("descripe", "饮品8选1，提供免费WiFi，美味不停歇");
 		item.put("price", "39.9元");
 		item.put("deletprice", "50元");
+		item.put("iconprice",R.drawable.ic_action_back);
 		item.put("grade", "4.4分（4200）");
 		list.add(item);
 		
@@ -131,6 +189,7 @@ public class MyPractiveAdapter extends Activity {
 		item.put("descripe", "美味蒸蛋1份，提供免费WiFi，美味不停歇");
 		item.put("price", "49.9元");
 		item.put("deletprice", "60元");
+		item.put("iconprice", R.drawable.ic_action_back);
 		item.put("grade", "4.5分（5200）");
 		list.add(item);
 		
@@ -141,6 +200,7 @@ public class MyPractiveAdapter extends Activity {
 		item.put("descripe", "单人自助，提供免费WiFi");
 		item.put("price", "59.9元");
 		item.put("deletprice", "70元");
+		item.put("iconprice", R.drawable.ic_action_back);
 		item.put("grade", "4.6分（6200）");
 		list.add(item);
 		
@@ -151,8 +211,25 @@ public class MyPractiveAdapter extends Activity {
 		item.put("descripe", "精品黄焖兔，建议2-3人使用，提供免费WiFi");
 		item.put("price", "69.9元");
 		item.put("deletprice", "89元");
+		item.put("iconprice", R.drawable.ic_action_back);
 		item.put("grade", "4.7分（7200）");
 		list.add(item);
 	}
 	
+	public void meituanDelButton(View v){
+			mCompleteTextView.setText("");
+	}
+	public class AutoCompleteAdapter extends SimpleAdapter{
+
+		public AutoCompleteAdapter(Context context,
+				List<? extends Map<String, ?>> data, int resource,
+				String[] from, int[] to) {
+			super(context, data, resource, from, to);
+			
+			
+			
+		}
+		
+		
+	}
 }

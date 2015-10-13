@@ -19,6 +19,7 @@ import com.example.ui.adapter.GridViewAdapter;
 import com.example.ui.adapter.GridViewTextAdapter;
 import com.example.ui.adapter.MyAdpater_Test;
 import com.example.ui.adapter.MyPractiveAdapter;
+import com.example.ui.adapter.ViewPagerAdapter;
 import com.example.ui.widget.Button_color;
 import com.example.ui.widget.CheckBoxTest;
 import com.example.ui.widget.EidtViewTest;
@@ -26,13 +27,15 @@ import com.example.ui.widget.EventButton;
 import com.example.ui.widget.ImageViewTest;
 import com.example.ui.widget.Logcat_Switch;
 import com.example.ui.widget.SexRadioButton;
+import com.example.ui.widget.bar.ProgessSeekBar;
 
 public class TestActivityList extends ListActivity{
 
 	String[] string = {"布局管理","按钮颜色设置","代码写界面","登录界面",
 			"按钮触发事件","图片","单选控件","多选控件","开关按钮",
 			"android自动保存","数据传递(一键退出)","intent测试",
-			"Array适配器","Simple适配器","自定义适配器","仿美团界面","GridVIew","带标记gridview"}; 
+			"Array适配器","Simple适配器","自定义适配器","仿美团界面",
+			"GridVIew","带标记gridview","viewpager","进度条"}; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -108,6 +111,12 @@ public class TestActivityList extends ListActivity{
 			break;
 		case 17:
 			startActivity(new Intent(this,GridViewTextAdapter.class));
+			break;
+		case 18:
+			startActivity(new Intent(this,ViewPagerAdapter.class));
+			break;
+		case 19:
+			startActivity(new Intent(this,ProgessSeekBar.class));
 			break;
 		}
 	}

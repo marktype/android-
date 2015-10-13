@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ProgressBar android:layout_width="match_parent" 
+        android:layout_height="wrap_content"
+        
+        />
+	<ProgressBar 
+	    android:id="@+id/progess_bar"
+	    android:layout_width="match_parent" 
+	    android:layout_height="wrap_content"
+	    android:layout_margin="20dp"
+	    style="?android:attr/progressBarStyleHorizontal"
+	    />
+    <Button 
+        android:id="@+id/progess_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Progress加载进度"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+    
+    <SeekBar 
+        android:id="@+id/seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"/>
+    <Button 
+        android:id="@+id/seek_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seek加载进度"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+    
+    <SeekBar 
+        android:id="@+id/seek_own_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        
+        android:thumb="@drawable/seekbar_button_selector"
+        android:progressDrawable="@drawable/a1f"/>
+    <Button 
+        android:id="@+id/seek_own_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义Seek加载进度"
+        
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+</LinearLayout>

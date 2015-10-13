@@ -58,6 +58,8 @@
             <activity android:name="com.example.ui.adapter.MyPractiveAdapter" />
             <activity android:name="com.example.ui.adapter.GridViewAdapter" />
              <activity android:name="com.example.ui.adapter.GridViewTextAdapter" />
+               <activity android:name="com.example.ui.adapter.ViewPagerAdapter" />
+               <activity android:name="com.example.ui.widget.bar.ProgessSeekBar" />
     </application>
 
 </manifest>
