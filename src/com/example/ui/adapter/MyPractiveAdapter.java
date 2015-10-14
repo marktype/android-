@@ -7,13 +7,15 @@ import java.util.Map;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
@@ -22,7 +24,7 @@ import android.widget.Toast;
 import com.example.layout.R;
 
 public class MyPractiveAdapter extends Activity {
-	private AutoCompleteTextView mCompleteTextView;
+	private ImageButton mSearchButton;
 	private ListView mPtListView;
 	private Spinner mSpinnerlist;
 	@Override
@@ -46,47 +48,22 @@ public class MyPractiveAdapter extends Activity {
 		setSpannerThree();
 		setspannerfour();
 		//====================================
-		/*
-		 * 搜索自动匹配
-		 * */
-		String[] searchTxt = {"m美食","m美女","m美食一条街","m美团外卖","美好","mshfhsd"};
-		mCompleteTextView = (AutoCompleteTextView) findViewById(R.id.search_edit);
 		
-//		String[] from = {"image","result","finally"};
-//		int[] to = {R.id.search_img,R.id.search_result_txt,R.id.search_finally_txt};
-//		ArrayList<HashMap<String, Object>> data = new ArrayList<HashMap<String,Object>>();
-//		setSearchResult(data);
-//		AutoCompleteAdapter searchAdapter = new AutoCompleteAdapter(this, data, 
-//				R.layout.autocomplete_search_item, from, to);
-		
+		mSearchButton = (ImageButton) findViewById(R.id.search_Txt);
+	
+		mSearchButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				startActivity(new Intent(MyPractiveAdapter.this, PractiveTwoAdapter.class));
+			}
+		});
 		
 		
-		ArrayAdapter<String> searchAdapter = new ArrayAdapter<String>(this, 
-				android.R.layout.simple_list_item_1, searchTxt);
-		mCompleteTextView.setThreshold(1);
-		mCompleteTextView.setAdapter(searchAdapter);
 		
 	}
 	
-//	public void setSearchResult(ArrayList<HashMap<String, Object>> data){
-//		HashMap<String, Object> item = new HashMap<String, Object>();
-//		item.put("image", R.drawable.ic_search_green);
-//		item.put("result", "m美食");
-//		item.put("finally", "约有45个团购");
-//		data.add(item);
-//		
-//		item = new HashMap<String, Object>();
-//		item.put("image", R.drawable.ic_search_green);
-//		item.put("result", "m美女");
-//		item.put("finally", "约有45个团购");
-//		data.add(item);
-//		
-//		item = new HashMap<String, Object>();
-//		item.put("image", R.drawable.ic_search_green);
-//		item.put("result", "m美食一条街");
-//		item.put("finally", "约有45个团购");
-//		data.add(item);
-//	}
 	
 	
 	//设置下拉列表1
@@ -216,20 +193,6 @@ public class MyPractiveAdapter extends Activity {
 		list.add(item);
 	}
 	
-	public void meituanDelButton(View v){
-			mCompleteTextView.setText("");
-	}
-	public class AutoCompleteAdapter extends SimpleAdapter{
-
-		public AutoCompleteAdapter(Context context,
-				List<? extends Map<String, ?>> data, int resource,
-				String[] from, int[] to) {
-			super(context, data, resource, from, to);
-			
-			
-			
-		}
-		
-		
-	}
+	
+	
 }

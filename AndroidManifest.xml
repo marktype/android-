@@ -48,18 +48,19 @@
         <activity android:name="com.example.activity.IntentDetil" >
             <intent-filter>
                 <action android:name="com.example.TestAction" />
-                
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-         <activity android:name="com.example.ui.adapter.Event_ArrayAdapter" />
-          <activity android:name="com.example.ui.adapter.Event_SimpleAdapter" />
-           <activity android:name="com.example.ui.adapter.MyAdpater_Test" />
-            <activity android:name="com.example.ui.adapter.MyPractiveAdapter" />
-            <activity android:name="com.example.ui.adapter.GridViewAdapter" />
-             <activity android:name="com.example.ui.adapter.GridViewTextAdapter" />
-               <activity android:name="com.example.ui.adapter.ViewPagerAdapter" />
-               <activity android:name="com.example.ui.widget.bar.ProgessSeekBar" />
+        <activity android:name="com.example.ui.adapter.Event_ArrayAdapter" />
+        <activity android:name="com.example.ui.adapter.Event_SimpleAdapter" />
+        <activity android:name="com.example.ui.adapter.MyAdpater_Test" />
+        <activity android:name="com.example.ui.adapter.MyPractiveAdapter" />
+        <activity android:name="com.example.ui.adapter.GridViewAdapter" />
+        <activity android:name="com.example.ui.adapter.GridViewTextAdapter" />
+        <activity android:name="com.example.ui.adapter.ViewPagerAdapter" />
+        <activity android:name="com.example.ui.widget.bar.ProgessSeekBar" />
+        <activity android:name="com.example.ui.adapter.PractiveTwoAdapter" />
     </application>
 
 </manifest>
