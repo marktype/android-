@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <Button android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialog_progress_btn"
+        android:text="@string/progress_dialog_txt"/>
+
+    <Button android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialog_datepicker_btn"
+        android:text="@string/datepicker_dialog_txt"/>
+    
+    <Button android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialog_own_btn"
+        android:text="@string/own_dialog_txt"/>
+    <Button android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialog_own_system_btn"
+        android:text="@string/alert_dialog_txt"/>
+    <Button android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toast_own_btn"
+        android:text="@string/own_toast_txt"/>
+    <Button android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/own_way_btn"
+        android:text="@string/own_way_txt"
+        android:onClick="onOwnWayDialog"/>
+</LinearLayout>

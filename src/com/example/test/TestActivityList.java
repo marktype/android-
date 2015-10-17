@@ -20,6 +20,9 @@ import com.example.ui.adapter.GridViewTextAdapter;
 import com.example.ui.adapter.MyAdpater_Test;
 import com.example.ui.adapter.MyPractiveAdapter;
 import com.example.ui.adapter.ViewPagerAdapter;
+import com.example.ui.dialog.AlertDialogBasic;
+import com.example.ui.meituan.StartImageActivity;
+import com.example.ui.tab.TabActivityTest;
 import com.example.ui.widget.Button_color;
 import com.example.ui.widget.CheckBoxTest;
 import com.example.ui.widget.EidtViewTest;
@@ -35,7 +38,8 @@ public class TestActivityList extends ListActivity{
 			"按钮触发事件","图片","单选控件","多选控件","开关按钮",
 			"android自动保存","数据传递(一键退出)","intent测试",
 			"Array适配器","Simple适配器","自定义适配器","仿美团界面",
-			"GridVIew","带标记gridview","viewpager","进度条"}; 
+			"GridVIew","带标记gridview","viewpager","进度条","对话框",
+			"TabActivity","美团"}; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -117,6 +121,15 @@ public class TestActivityList extends ListActivity{
 			break;
 		case 19:
 			startActivity(new Intent(this,ProgessSeekBar.class));
+			break;
+		case 20:
+			startActivity(new Intent(this,AlertDialogBasic.class));
+			break;
+		case 21:
+			startActivity(new Intent(this,TabActivityTest.class));
+			break;
+		case 22:
+			startActivity(new Intent(this,StartImageActivity.class));
 			break;
 		}
 	}

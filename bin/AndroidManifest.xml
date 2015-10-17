@@ -61,6 +61,11 @@
         <activity android:name="com.example.ui.adapter.ViewPagerAdapter" />
         <activity android:name="com.example.ui.widget.bar.ProgessSeekBar" />
         <activity android:name="com.example.ui.adapter.PractiveTwoAdapter" />
+        <activity android:name="com.example.ui.dialog.AlertDialogBasic" />
+        <activity android:name="com.example.ui.tab.TabActivityTest" />
+        <activity android:name="com.example.ui.meituan.StartImageActivity" />
+        <activity android:name="com.example.ui.meituan.UserLoginActivity" />
+        <activity android:name="com.example.ui.meituan.MainMassageActivity" />
     </application>
 
 </manifest>

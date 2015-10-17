@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   
     android:orientation="vertical" >
+
     <RelativeLayout
         android:id="@+id/title_view"
         android:layout_width="match_parent"
@@ -16,9 +16,9 @@
             android:layout_width="30dp"
             android:layout_height="20dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/nf" 
             android:clickable="true"
-            android:onClick="imageBack"/>
+            android:onClick="imageBack"
+            android:src="@drawable/nf" />
 
         <ImageView
             android:id="@+id/home_image"
@@ -28,8 +28,8 @@
             android:layout_toRightOf="@id/button_back_btn"
             android:src="@drawable/ic_action_home" />
 
-        
         <!-- dropDown  下拉列表设置  ，offset 偏移量，左为负，右为正 -->
+
         <AutoCompleteTextView
             android:id="@+id/search_edit"
             android:layout_width="match_parent"
@@ -37,15 +37,16 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="80dp"
             android:layout_marginRight="70dp"
-            android:background="@drawable/zm"
-            android:hint="请输入搜索信息"
-            android:textSize="15sp"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
-            android:dropDownWidth="match_parent"
+            android:background="@drawable/bg_global_search_textbox"
             android:dropDownHorizontalOffset="-80dp"
             android:dropDownVerticalOffset="10dp"
-            android:singleLine="true" />
+            android:dropDownWidth="match_parent"
+            android:hint="请输入搜索信息"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:singleLine="true"
+            android:textColorHint="@android:color/white"
+            android:textSize="15sp" />
 
         <ImageView
             android:id="@+id/search_image"
@@ -72,7 +73,7 @@
             android:layout_height="33dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="65dp"
+            android:layout_marginRight="68dp"
             android:background="@drawable/del_button_selector"
             android:onClick="meituanDelButton" />
     </RelativeLayout>

@@ -5,12 +5,12 @@
     android:orientation="vertical" 
     android:gravity="center">
     
-    <TextView 
+    <ImageView 
         android:id="@+id/viewpager_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="哈喽"
-        android:textSize="30sp"/>
+        android:src="@drawable/img_exchange_guide2"
+        />
 
     
 </LinearLayout>

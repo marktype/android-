@@ -123,7 +123,7 @@ public class MyPractiveAdapter extends Activity {
 		item.put("price", "9.9元");
 		item.put("deletprice", "20元");
 		item.put("grade", "4.1分（1200）");
-		item.put("iconprice", R.drawable.ic_action_back);
+		item.put("iconprice", R.drawable.listitem_divide);
 		list.add(item);
 		
 		item = new HashMap<String, Object>();
@@ -133,7 +133,7 @@ public class MyPractiveAdapter extends Activity {
 		item.put("descripe", "100元代金券1张，全场通用，可叠加使用");
 		item.put("price", "19.9元");
 		item.put("deletprice", "30元");
-		item.put("iconprice", R.drawable.ic_action_back);
+		item.put("iconprice", R.drawable.listitem_divide);
 		item.put("grade", "4.2分（2200）");
 		list.add(item);
 		
@@ -155,7 +155,7 @@ public class MyPractiveAdapter extends Activity {
 		item.put("descripe", "饮品8选1，提供免费WiFi，美味不停歇");
 		item.put("price", "39.9元");
 		item.put("deletprice", "50元");
-		item.put("iconprice",R.drawable.ic_action_back);
+		item.put("iconprice",R.drawable.listitem_divide);
 		item.put("grade", "4.4分（4200）");
 		list.add(item);
 		
@@ -166,7 +166,7 @@ public class MyPractiveAdapter extends Activity {
 		item.put("descripe", "美味蒸蛋1份，提供免费WiFi，美味不停歇");
 		item.put("price", "49.9元");
 		item.put("deletprice", "60元");
-		item.put("iconprice", R.drawable.ic_action_back);
+		item.put("iconprice", R.drawable.listitem_divide);
 		item.put("grade", "4.5分（5200）");
 		list.add(item);
 		
@@ -177,7 +177,7 @@ public class MyPractiveAdapter extends Activity {
 		item.put("descripe", "单人自助，提供免费WiFi");
 		item.put("price", "59.9元");
 		item.put("deletprice", "70元");
-		item.put("iconprice", R.drawable.ic_action_back);
+		item.put("iconprice", R.drawable.listitem_divide);
 		item.put("grade", "4.6分（6200）");
 		list.add(item);
 		
@@ -188,7 +188,7 @@ public class MyPractiveAdapter extends Activity {
 		item.put("descripe", "精品黄焖兔，建议2-3人使用，提供免费WiFi");
 		item.put("price", "69.9元");
 		item.put("deletprice", "89元");
-		item.put("iconprice", R.drawable.ic_action_back);
+		item.put("iconprice", R.drawable.listitem_divide);
 		item.put("grade", "4.7分（7200）");
 		list.add(item);
 	}

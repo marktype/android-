@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title_view"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_actionbar"
+        android:orientation="horizontal" >
+
+        <Spinner
+            android:id="@+id/meituan_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/aaaaaaaa" />
+
+        <!-- dropDown  下拉列表设置  ，offset 偏移量，左为负，右为正 -->
+
+        <AutoCompleteTextView
+            android:id="@+id/search_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="60dp"
+            android:background="@drawable/bg_global_search_textbox"
+            android:dropDownHorizontalOffset="-80dp"
+            android:dropDownVerticalOffset="10dp"
+            android:dropDownWidth="match_parent"
+            android:hint="请输入搜索信息"
+            android:paddingLeft="40dp"
+            android:paddingRight="20dp"
+            android:singleLine="true"
+            android:textColorHint="@android:color/white"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/search_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="90dp"
+            android:src="@drawable/ic_search_green" />
+
+        <ImageView
+            android:id="@+id/search_Txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_action_map" />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/meituan_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:numColumns="4" >
+    </GridView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/bargain_title" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:text="@string/meituan_content_two_txt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_special_countdown"
+            android:text="02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="：" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_special_countdown"
+            android:text="06" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="：" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_special_countdown"
+            android:text="14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/aaaaaaaa"
+            android:text="@string/meituan_content_more_txt" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/meituan_listview"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" 
+        
+        >
+    </ListView>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/meituan_viewpager_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

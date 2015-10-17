@@ -3,6 +3,7 @@ package com.example.ui.adapter;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -10,9 +11,11 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
 
 import com.example.layout.R;
+import com.example.ui.tab.TabActivityTest;
 
 public class ViewPagerAdapter extends Activity {
 	private ViewPager mViewPager;
@@ -21,6 +24,7 @@ public class ViewPagerAdapter extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.adapter_viewpager);
 		mImageOne = (ImageView) findViewById(R.id.image_choice1);
 		mImageTwo = (ImageView) findViewById(R.id.image_choice2);
@@ -54,6 +58,8 @@ public class ViewPagerAdapter extends Activity {
 				case 2:
 					mImageThree.setImageResource(R.drawable.dot_choice);
 					mImageTwo.setImageResource(R.drawable.dot_no_choice);
+					startActivity(new Intent(ViewPagerAdapter.this, TabActivityTest.class));
+					finish();
 					break;
 				default:
 					break;
