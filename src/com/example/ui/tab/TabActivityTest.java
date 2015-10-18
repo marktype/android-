@@ -13,8 +13,8 @@ import android.widget.TextView;
 
 import com.example.layout.R;
 import com.example.ui.adapter.MyPractiveAdapter;
-import com.example.ui.adapter.ViewPagerAdapter;
 import com.example.ui.meituan.MainMassageActivity;
+import com.example.ui.meituan.MyMassageActivity;
 import com.example.ui.widget.EidtViewTest;
 
 public class TabActivityTest extends TabActivity {
@@ -36,7 +36,7 @@ public class TabActivityTest extends TabActivity {
 		
 		TabSpec three = tabHost.newTabSpec("tab3");
 		three.setIndicator(setTabMenu("我的", R.drawable.tab_item3_selector));
-		three.setContent(new Intent(this, ViewPagerAdapter.class));
+		three.setContent(new Intent(this, MyMassageActivity.class));
 		
 		TabSpec four = tabHost.newTabSpec("tab4");
 		four.setIndicator(setTabMenu("更多", R.drawable.tab_item4_selector));

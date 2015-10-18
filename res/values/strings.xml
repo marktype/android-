@@ -23,9 +23,12 @@
  	<string name="meituan_content_one_txt">名店抢购</string>
  	<string name="meituan_content_two_txt">距离开始</string>
  	<string name="meituan_content_more_txt">更多</string>
+ 	<string name="meituan_my_txt">我的</string>
+ 	<string name="meituan_more_txt">更多</string>
  	<string name="weixin_text">微信登录</string>
  	<string name="find_password_text">忘记密码？</string>
  	<string name="meituan_find_password_txt">找回密码</string>
+ 	<string name="meituan_apply_txt">精品应用</string>
  	<string name="imp_text">接口</string>
  	<string name="inner_text">内部类</string>
  	<string name="xml_text">xml实现</string>
@@ -45,4 +48,5 @@
  	<string name="own_dialog_content_txt">退出可能会丢失部分未保存的信息，确认退出？</string>
  	<string name="own_dialog_yes_txt">是</string>
  	<string name="own_dialog_no_txt">否</string>
+ 	<string name="menu_btn">菜单按钮</string>
 </resources>

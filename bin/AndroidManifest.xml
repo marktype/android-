@@ -66,6 +66,8 @@
         <activity android:name="com.example.ui.meituan.StartImageActivity" />
         <activity android:name="com.example.ui.meituan.UserLoginActivity" />
         <activity android:name="com.example.ui.meituan.MainMassageActivity" />
+        <activity android:name="com.example.ui.menu.ContextMenuActivityTest" />
+        <activity android:name="com.example.ui.meituan.MyMassageActivity" />
     </application>
 
 </manifest>

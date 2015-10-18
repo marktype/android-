@@ -117,11 +117,13 @@
             android:background="@drawable/bg_special_countdown"
             android:text="14" />
 
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/aaaaaaaa"
+            android:background="@color/white"
+            android:textSize="14sp"
+            android:drawableRight="@drawable/ic_global_arrow_right"
             android:text="@string/meituan_content_more_txt" />
     </LinearLayout>
 
