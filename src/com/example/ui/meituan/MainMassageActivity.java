@@ -3,17 +3,13 @@ package com.example.ui.meituan;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.example.layout.R;
-import com.example.ui.adapter.ViewPagerAdapter.MyViewPagerAdapter;
-
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.ForegroundColorSpan;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,11 +19,17 @@ import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.layout.R;
+
 
 public class MainMassageActivity extends Activity {
 	private Spinner mSpinner;
 	private GridView mGridView;
-	private ListView mListView,mOtherListView;
+	private ListView mListView,mTwoListView,mThreeListView;
+	private long mExitTime;
 	private ViewPager mViewPager;
 	private ArrayList<View> data = new ArrayList<View>();
 	@Override
@@ -45,13 +47,9 @@ public class MainMassageActivity extends Activity {
 		mGridView.setAdapter(simpleAdapter);
 		
 		mListView = (ListView) findViewById(R.id.meituan_listview);
-		
-		
 		MyListAdapter myListAdapter = new MyListAdapter(this);
 		myListAdapter.setList(setListViewData());
 		mListView.setAdapter(myListAdapter);
-		
-		
 		
 		
 		mViewPager = (ViewPager) findViewById(R.id.meituan_viewpager_view);
@@ -59,6 +57,8 @@ public class MainMassageActivity extends Activity {
 		MyViewPagerAdapter viewPagerAdapter = new MyViewPagerAdapter();
 		mViewPager.setAdapter(viewPagerAdapter);
 		viewPagerAdapter.setDataList(data);
+		
+		
 	}
 	
 	/*
@@ -67,12 +67,11 @@ public class MainMassageActivity extends Activity {
 	public void setSpinner(){
 		String[] city = {"成都","北京","上海","广东","天津"};
 		mSpinner = (Spinner) findViewById(R.id.meituan_spinner);
-		
-		
 		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, 
 				android.R.layout.simple_list_item_1, city);
 		mSpinner.setAdapter(arrayAdapter);
 	}
+	
 	
 	
 	/*
@@ -188,4 +187,19 @@ public class MainMassageActivity extends Activity {
 		v = LayoutInflater.from(this).inflate(R.layout.meituan_viewpager_three, null);
 		data.add(v);
 	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+                if ((System.currentTimeMillis() - mExitTime) > 2000) {
+                        Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                        mExitTime = System.currentTimeMillis();
+
+                } else {
+                        finish();
+                }
+                return true;
+        }
+        return super.onKeyDown(keyCode, event);
+}
 }

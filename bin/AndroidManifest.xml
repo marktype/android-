@@ -7,6 +7,8 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="14" />
+    <instrumentation android:targetPackage="com.example.layout" android:name="android.test.InstrumentationTestRunner"></instrumentation>
+    <instrumentation android:targetPackage="com.example.layout" android:name="android.test.InstrumentationTestRunner"></instrumentation>
 
     <application
         android:allowBackup="true"
@@ -66,8 +68,16 @@
         <activity android:name="com.example.ui.meituan.StartImageActivity" />
         <activity android:name="com.example.ui.meituan.UserLoginActivity" />
         <activity android:name="com.example.ui.meituan.MainMassageActivity" />
-        <activity android:name="com.example.ui.menu.ContextMenuActivityTest" />
+        <activity
+            android:name="com.example.ui.menu.ContextMenuActivityTest"
+            android:label="美团"
+            android:logo="@drawable/ic_action_home"
+            android:parentActivityName="com.example.test.TestActivityList" />
         <activity android:name="com.example.ui.meituan.MyMassageActivity" />
+        <activity android:name="com.example.ui.meituan.MoreInfoActivity" />
+        <activity android:name="com.example.ui.shape.ShapeActivity" />
+        <activity android:name="com.example.ui.menu.PopupWindowActivity" />
+        <activity android:name="com.example.handler.HandlerMessage" />
     </application>
 
 </manifest>

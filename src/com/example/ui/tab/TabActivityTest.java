@@ -1,8 +1,13 @@
 package com.example.ui.tab;
 
+import android.app.AlertDialog;
 import android.app.TabActivity;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -10,15 +15,15 @@ import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.layout.R;
 import com.example.ui.adapter.MyPractiveAdapter;
 import com.example.ui.meituan.MainMassageActivity;
+import com.example.ui.meituan.MoreInfoActivity;
 import com.example.ui.meituan.MyMassageActivity;
-import com.example.ui.widget.EidtViewTest;
 
 public class TabActivityTest extends TabActivity {
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -40,14 +45,13 @@ public class TabActivityTest extends TabActivity {
 		
 		TabSpec four = tabHost.newTabSpec("tab4");
 		four.setIndicator(setTabMenu("更多", R.drawable.tab_item4_selector));
-		four.setContent(new Intent(this, EidtViewTest.class));
+		four.setContent(new Intent(this, MoreInfoActivity.class));
 		
 		tabHost.addTab(first);
 		tabHost.addTab(sccond);
 		tabHost.addTab(three);
 		tabHost.addTab(four);
 	}
-	
 	public View setTabMenu(String name,int image){
 		View v = LayoutInflater.from(this).inflate(R.layout.tab_own_item_layout, null);
 		TextView menuText = (TextView) v.findViewById(R.id.tab_menu_txt);

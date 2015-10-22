@@ -4,37 +4,24 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    
-	
-    
-         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:contentDescription="@string/app_name"
-            
-            android:src="@drawable/ic_launcher" />
-    
-	
-	
-	
-	
-
-
+    <!-- style只能存在一个 -->
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/animal" />
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        style="@style/app_size_two"
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_launcher" />
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        style="@style/app_size"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/animal" />
+
+    <ImageView
+        style="@style/app_size"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_launcher" />
+
+    <ImageView
+        style="@style/app_size"
         android:contentDescription="@string/app_name"
         android:src="@drawable/animal" />
 

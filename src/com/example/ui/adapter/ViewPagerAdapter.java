@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
 
 import com.example.layout.R;
@@ -23,7 +24,7 @@ public class ViewPagerAdapter extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.adapter_viewpager);
 		mImageOne = (ImageView) findViewById(R.id.image_choice1);
 		mImageTwo = (ImageView) findViewById(R.id.image_choice2);

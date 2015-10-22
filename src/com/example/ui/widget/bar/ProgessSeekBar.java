@@ -1,20 +1,43 @@
 package com.example.ui.widget.bar;
 
+import java.util.logging.MemoryHandler;
+
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
 import com.example.layout.R;
+import com.example.ui.meituan.MainMassageActivity;
 
 public class ProgessSeekBar extends Activity {
 
 	private ProgressBar mProgessBar;
 	private SeekBar mSeekBar, mSeekOwnBar;
 	private Button mProgessBtn, mSeekBtn, mSeekOwnBtn;
+
+	Handler mHandler = new Handler() {
+		@Override
+		public void handleMessage(Message msg) {
+			switch (msg.what) {
+			case 2:
+				String mess = (String) msg.obj;
+				Toast.makeText(ProgessSeekBar.this, mess, Toast.LENGTH_SHORT)
+						.show();
+				break;
+
+			default:
+				break;
+			}
+
+		}
+	};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +70,10 @@ public class ProgessSeekBar extends Activity {
 								e.printStackTrace();
 							}
 						}
-
+						Message msg = Message.obtain();
+						msg.what = 2;
+						msg.obj = "加载完成";
+						mHandler.sendMessage(msg);
 					}
 				}).start();
 			}
@@ -72,6 +98,15 @@ public class ProgessSeekBar extends Activity {
 							}
 						}
 
+						mHandler.post(new Runnable() {
+
+							@Override
+							public void run() {
+
+								Toast.makeText(ProgessSeekBar.this, "成功加载",
+										Toast.LENGTH_SHORT).show();
+							}
+						});
 					}
 				}).start();
 			}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+     >
+
+    <item
+        android:id="@+id/action_bar_overflow_search"
+        android:actionViewClass="android.widget.SearchView"
+        android:showAsAction="ifRoom"
+        android:title="搜索">
+    </item>
+    <item
+        android:id="@+id/action_bar_overflow_delete"
+        android:icon="@drawable/nk"
+        android:showAsAction="never"
+        android:title="删除">
+    </item>
+    <item
+        android:id="@+id/action_bar_overflow_share"
+        android:actionProviderClass="android.widget.ShareActionProvider"
+        android:showAsAction="ifRoom"
+        android:title="分享">
+    </item>
+
+    <!-- android:actionProviderClass="com.example.ui.menu.MyProvider" 自定义actionprovider类
+    此类单独存在，不能定义在内不内中，否则显示不出效果-->
+    <item
+        android:id="@+id/action_bar_overflow_start"
+        android:actionProviderClass="com.example.ui.menu.MyProvider"
+        android:showAsAction="always"
+        android:icon="@drawable/ic_launcher"
+        android:title="启动">
+    </item>
+</menu>

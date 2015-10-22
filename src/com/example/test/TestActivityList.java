@@ -11,6 +11,7 @@ import com.example.activity.IntentCallPhone;
 import com.example.activity.OnStartActivityExtraBundleA;
 import com.example.activity.SaveInstanceTest;
 import com.example.basicinfo.ActivityExitAll;
+import com.example.handler.HandlerMessage;
 import com.example.layout.LayoutAll;
 import com.example.layout.TestCodeActvity;
 import com.example.ui.adapter.Event_ArrayAdapter;
@@ -23,6 +24,8 @@ import com.example.ui.adapter.ViewPagerAdapter;
 import com.example.ui.dialog.AlertDialogBasic;
 import com.example.ui.meituan.StartImageActivity;
 import com.example.ui.menu.ContextMenuActivityTest;
+import com.example.ui.menu.PopupWindowActivity;
+import com.example.ui.shape.ShapeActivity;
 import com.example.ui.tab.TabActivityTest;
 import com.example.ui.widget.Button_color;
 import com.example.ui.widget.CheckBoxTest;
@@ -40,7 +43,7 @@ public class TestActivityList extends ListActivity{
 			"android自动保存","数据传递(一键退出)","intent测试",
 			"Array适配器","Simple适配器","自定义适配器","仿美团界面",
 			"GridVIew","带标记gridview","viewpager","进度条","对话框",
-			"TabActivity","美团","菜单"}; 
+			"TabActivity","美团","菜单","shape","popupWindow","handler"}; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -134,6 +137,15 @@ public class TestActivityList extends ListActivity{
 			break;
 		case 23:
 			startActivity(new Intent(this,ContextMenuActivityTest.class));
+			break;
+		case 24:
+			startActivity(new Intent(this,ShapeActivity.class));
+			break;
+		case 25:
+			startActivity(new Intent(this,PopupWindowActivity.class));
+			break;
+		case 26:
+			startActivity(new Intent(this,HandlerMessage.class));
 			break;
 		}
 	}
