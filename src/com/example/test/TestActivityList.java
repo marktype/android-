@@ -11,6 +11,8 @@ import com.example.activity.IntentCallPhone;
 import com.example.activity.OnStartActivityExtraBundleA;
 import com.example.activity.SaveInstanceTest;
 import com.example.basicinfo.ActivityExitAll;
+import com.example.callback.CallBackActivityTest;
+import com.example.db.DBActivity;
 import com.example.handler.HandlerMessage;
 import com.example.layout.LayoutAll;
 import com.example.layout.TestCodeActvity;
@@ -43,7 +45,8 @@ public class TestActivityList extends ListActivity{
 			"android自动保存","数据传递(一键退出)","intent测试",
 			"Array适配器","Simple适配器","自定义适配器","仿美团界面",
 			"GridVIew","带标记gridview","viewpager","进度条","对话框",
-			"TabActivity","美团","菜单","shape","popupWindow","handler"}; 
+			"TabActivity","美团","菜单","shape","popupWindow",
+			"handler","回调CallBack","数据库"}; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -146,6 +149,12 @@ public class TestActivityList extends ListActivity{
 			break;
 		case 26:
 			startActivity(new Intent(this,HandlerMessage.class));
+			break;
+		case 27:
+			startActivity(new Intent(this,CallBackActivityTest.class));
+			break;
+		case 28:
+			startActivity(new Intent(this,DBActivity.class));
 			break;
 		}
 	}
