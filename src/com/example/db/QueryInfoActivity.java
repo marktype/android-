@@ -23,7 +23,7 @@ public class QueryInfoActivity extends Activity {
 		setContentView(R.layout.db_listview_adapter);
 		
 		//查询表中的信息
-		MyDataBase dataBase = new MyDataBase(this);
+		MyDataBase dataBase = MyDataBase.getInstance(this);
 		ArrayList<User> userData = dataBase.query();
 		//设置数据源
 		mListView = (ListView) findViewById(R.id.db_listview);

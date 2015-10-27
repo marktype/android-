@@ -12,6 +12,10 @@ public class MyAndroidDB extends SQLiteOpenHelper {
 	private static final int DB_VERSION = 2;  //版本信息
 	private static final String TABLE_STUDENT = "student"; //表名
 	
+	
+	
+	
+	
 	//精简代码，其中3个参数在super中用3个定值代替达到简化效果
 	public MyAndroidDB(Context context) {
 		super(context, DB_NAME, null, DB_VERSION);

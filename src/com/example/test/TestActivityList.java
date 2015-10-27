@@ -16,6 +16,7 @@ import com.example.db.DBActivity;
 import com.example.handler.HandlerMessage;
 import com.example.layout.LayoutAll;
 import com.example.layout.TestCodeActvity;
+import com.example.store.file.SendImageStore;
 import com.example.ui.adapter.Event_ArrayAdapter;
 import com.example.ui.adapter.Event_SimpleAdapter;
 import com.example.ui.adapter.GridViewAdapter;
@@ -46,7 +47,7 @@ public class TestActivityList extends ListActivity{
 			"Array适配器","Simple适配器","自定义适配器","仿美团界面",
 			"GridVIew","带标记gridview","viewpager","进度条","对话框",
 			"TabActivity","美团","菜单","shape","popupWindow",
-			"handler","回调CallBack","数据库"}; 
+			"handler","回调CallBack","数据库","file文件存储"}; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -155,6 +156,9 @@ public class TestActivityList extends ListActivity{
 			break;
 		case 28:
 			startActivity(new Intent(this,DBActivity.class));
+			break;
+		case 29:
+			startActivity(new Intent(this,SendImageStore.class));
 			break;
 		}
 	}

@@ -21,7 +21,7 @@ public class DBActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.db_activity);
-		mMyBase = new MyDataBase(this);
+		mMyBase = MyDataBase.getInstance(this);
 		
 		mNameTxt = (TextView) findViewById(R.id.db_name_txt);
 		mPasswordTxt = (TextView) findViewById(R.id.db_password_txt);

@@ -27,10 +27,14 @@ public class CousorActivity extends Activity {
 		MyDataBase base  = new MyDataBase(this);
 		SQLiteDatabase db = base.getReadableDatabase();
 		
-		Cousor couAdapter = new Cousor(this, db.query(MyDataBase.TABLE_USER, null, null, null, null, null, null));
+		Cousor couAdapter = new Cousor(this, db.query(DataBaseUtil.TableUserColumn.TABLE_USER, null, null, null, null, null, null));
 		mListView.setAdapter(couAdapter);
 	}
 
+	/**
+	 * 自定义cursorAdapter
+	 * 
+	 * */
 	public class Cousor extends CursorAdapter{
 		LayoutInflater layoutInflater;
 		public Cousor(Context context, Cursor c) {
@@ -44,8 +48,8 @@ public class CousorActivity extends Activity {
 			TextView name = (TextView) view.findViewById(R.id.db_query_name_txt);
 			TextView password = (TextView) view.findViewById(R.id.db_query_password_txt);
 			
-			name.setText(cursor.getString(cursor.getColumnIndex("name")));
-			password.setText(cursor.getString(cursor.getColumnIndex("password")));
+			name.setText(cursor.getString(cursor.getColumnIndex(DataBaseUtil.TableUserColumn.NAME)));
+			password.setText(cursor.getString(cursor.getColumnIndex(DataBaseUtil.TableUserColumn.PASSWORD)));
 		}
 
 		@Override
