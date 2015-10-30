@@ -151,12 +151,12 @@ public final class R {
         public static final int zm=0x7f020074;
     }
     public static final class id {
-        public static final int action_bar_overflow_delete=0x7f09009e;
-        public static final int action_bar_overflow_search=0x7f09009d;
-        public static final int action_bar_overflow_share=0x7f09009f;
-        public static final int action_bar_overflow_start=0x7f0900a0;
-        public static final int action_settings=0x7f0900a3;
-        public static final int activity_button=0x7f090096;
+        public static final int action_bar_overflow_delete=0x7f0900a0;
+        public static final int action_bar_overflow_search=0x7f09009f;
+        public static final int action_bar_overflow_share=0x7f0900a1;
+        public static final int action_bar_overflow_start=0x7f0900a2;
+        public static final int action_settings=0x7f0900a5;
+        public static final int activity_button=0x7f090098;
         public static final int adapter_listview=0x7f090050;
         public static final int auto_Txt=0x7f090010;
         public static final int auto_simpleadapter=0x7f090051;
@@ -205,7 +205,7 @@ public final class R {
         public static final int fast_txt=0x7f09006f;
         public static final int file_store_img=0x7f090061;
         public static final int find_password=0x7f09000a;
-        public static final int first=0x7f09009a;
+        public static final int first=0x7f09009c;
         public static final int first_tv=0x7f090032;
         public static final int five_tv=0x7f09001e;
         public static final int four_tv=0x7f09001d;
@@ -253,11 +253,11 @@ public final class R {
         public static final int meituen_price_one_txt=0x7f09006a;
         public static final int menu_btn=0x7f09007d;
         public static final int menu_content_list=0x7f09007e;
-        public static final int menu_context_one=0x7f0900a1;
-        public static final int menu_context_two=0x7f0900a2;
+        public static final int menu_context_one=0x7f0900a3;
+        public static final int menu_context_two=0x7f0900a4;
         public static final int name_edit_text=0x7f090007;
         public static final int name_list=0x7f090084;
-        public static final int one=0x7f090097;
+        public static final int one=0x7f090099;
         public static final int own_way_btn=0x7f090005;
         public static final int password_edit_text=0x7f090009;
         public static final int password_text=0x7f090008;
@@ -278,7 +278,7 @@ public final class R {
         public static final int search_image=0x7f090041;
         public static final int search_img=0x7f090052;
         public static final int search_result_txt=0x7f090053;
-        public static final int second=0x7f09009b;
+        public static final int second=0x7f09009d;
         public static final int second_tv=0x7f090033;
         public static final int seek_bar=0x7f09008c;
         public static final int seek_button=0x7f09008d;
@@ -290,23 +290,25 @@ public final class R {
         public static final int simple_content_txt=0x7f090093;
         public static final int simple_listview=0x7f090090;
         public static final int simple_title_txt=0x7f090092;
+        public static final int sms_get_message_btn=0x7f090095;
+        public static final int sms_message_txt=0x7f090094;
         public static final int spinner_1_item=0x7f090043;
         public static final int spinner_2_item=0x7f090044;
         public static final int spinner_3_item=0x7f090045;
         public static final int spinner_4_item=0x7f090046;
         public static final int switch_onoff=0x7f090067;
-        public static final int tab_image=0x7f090094;
-        public static final int tab_menu_txt=0x7f090095;
+        public static final int tab_image=0x7f090096;
+        public static final int tab_menu_txt=0x7f090097;
         public static final int test_txt=0x7f090011;
         public static final int textView1=0x7f09001f;
         public static final int textView2=0x7f09002c;
         public static final int textView3=0x7f09002e;
-        public static final int three=0x7f09009c;
-        public static final int three3=0x7f090099;
+        public static final int three=0x7f09009e;
+        public static final int three3=0x7f09009b;
         public static final int three_tv=0x7f09001c;
         public static final int title_view=0x7f09003e;
         public static final int toast_own_btn=0x7f090004;
-        public static final int two=0x7f090098;
+        public static final int two=0x7f09009a;
         public static final int user_name_text=0x7f090006;
         public static final int viewpager_one=0x7f09004d;
         public static final int viewpager_three=0x7f09004f;
@@ -376,11 +378,12 @@ public final class R {
         public static final int shape_view_change=0x7f030038;
         public static final int simple_adapter=0x7f030039;
         public static final int simple_adapter_item_list=0x7f03003a;
-        public static final int tab_my_own_layout=0x7f03003b;
-        public static final int tab_own_item_layout=0x7f03003c;
-        public static final int toast_own=0x7f03003d;
-        public static final int widget_button=0x7f03003e;
-        public static final int widget_checkbox=0x7f03003f;
+        public static final int sms_message_listener=0x7f03003b;
+        public static final int tab_my_own_layout=0x7f03003c;
+        public static final int tab_own_item_layout=0x7f03003d;
+        public static final int toast_own=0x7f03003e;
+        public static final int widget_button=0x7f03003f;
+        public static final int widget_checkbox=0x7f030040;
     }
     public static final class menu {
         public static final int action_bar_view=0x7f080000;

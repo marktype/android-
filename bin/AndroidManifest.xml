@@ -17,7 +17,10 @@
     <!-- 文件外部存储读写时需加下面两行权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
+	<!-- 下两行代码为读写短信权限 -->
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -94,6 +97,9 @@
         <activity android:name="com.example.db.QueryInfoActivity" />
         <activity android:name="com.example.db.CousorActivity" />
         <activity android:name="com.example.store.file.SendImageStore" />
+         <activity android:name="com.example.store.sms.SmsActivity" />
+        <provider android:name="com.example.store.DBProvider.ContentProviderTest"
+            android:authorities="com.example.layout"></provider>
     </application>
 
 </manifest>

@@ -1,11 +1,14 @@
 package com.example.test;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import com.example.activity.IntentCallPhone;
 import com.example.activity.OnStartActivityExtraBundleA;
@@ -17,6 +20,7 @@ import com.example.handler.HandlerMessage;
 import com.example.layout.LayoutAll;
 import com.example.layout.TestCodeActvity;
 import com.example.store.file.SendImageStore;
+import com.example.store.sms.SmsActivity;
 import com.example.ui.adapter.Event_ArrayAdapter;
 import com.example.ui.adapter.Event_SimpleAdapter;
 import com.example.ui.adapter.GridViewAdapter;
@@ -39,127 +43,82 @@ import com.example.ui.widget.Logcat_Switch;
 import com.example.ui.widget.SexRadioButton;
 import com.example.ui.widget.bar.ProgessSeekBar;
 
-public class TestActivityList extends ListActivity{
-
-	String[] string = {"布局管理","按钮颜色设置","代码写界面","登录界面",
-			"按钮触发事件","图片","单选控件","多选控件","开关按钮",
-			"android自动保存","数据传递(一键退出)","intent测试",
-			"Array适配器","Simple适配器","自定义适配器","仿美团界面",
-			"GridVIew","带标记gridview","viewpager","进度条","对话框",
-			"TabActivity","美团","菜单","shape","popupWindow",
-			"handler","回调CallBack","数据库","file文件存储"}; 
+public class TestActivityList extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		//记录界面（后面一键退出）
+		// 记录界面（后面一键退出）
 		ActivityExitAll main = ActivityExitAll.getInstance();
 		main.addActivity(this);
 		
+		String[] from = { "title" };
+		int[] to = { android.R.id.text1 };
+		SimpleAdapter adapter = new SimpleAdapter(this, setData(),
+				android.R.layout.simple_list_item_1, from, to);
+
+		setListAdapter(adapter);
 		
-		
-		
-	ArrayAdapter ap = new ArrayAdapter(this,android.R.layout.simple_list_item_1, string);
+	}
+	public ArrayList<HashMap<String, Object>> setData(){
+		ArrayList<HashMap<String, Object>> data = new ArrayList<HashMap<String, Object>>();
+		addItem(data, "布局管理", LayoutAll.class);
+		addItem(data, "按钮颜色设置", Button_color.class);
+		addItem(data, "代码写界面", TestCodeActvity.class);
+		addItem(data, "登录界面", EidtViewTest.class);
+		addItem(data, "按钮触发事件", EventButton.class);
+		addItem(data, "图片", ImageViewTest.class);
+		addItem(data, "单选控件", SexRadioButton.class);
+		addItem(data, "多选控件", CheckBoxTest.class);
+		addItem(data, "开关按钮", Logcat_Switch.class);
+		addItem(data, "android自动保存", SaveInstanceTest.class);
+		addItem(data, "数据传递(一键退出)", OnStartActivityExtraBundleA.class);
+		addItem(data, "intent测试", IntentCallPhone.class);
+		addItem(data, "Array适配器", Event_ArrayAdapter.class);
+		addItem(data, "Simple适配器", Event_SimpleAdapter.class);
+		addItem(data, "自定义适配器", MyAdpater_Test.class);
+		addItem(data, "仿美团界面", MyPractiveAdapter.class);
+		addItem(data, "GridVIew", GridViewAdapter.class);
+		addItem(data, "带标记gridview", GridViewTextAdapter.class);
+		addItem(data, "viewpager", ViewPagerAdapter.class);
+		addItem(data, "进度条", ProgessSeekBar.class);
+		addItem(data, "对话框", AlertDialogBasic.class);
+		addItem(data, "TabActivity", TabActivityTest.class);
+		addItem(data, "美团", StartImageActivity.class);
+		addItem(data, "菜单", ContextMenuActivityTest.class);
+		addItem(data, "shape", ShapeActivity.class);
+		addItem(data, "popupWindow", PopupWindowActivity.class);
+		addItem(data, "handler", HandlerMessage.class);
+		addItem(data, "回调CallBack",CallBackActivityTest.class);
+		addItem(data, "数据库", DBActivity.class);
+		addItem(data, "file文件存储", SendImageStore.class);
+		addItem(data, "短信监听", SmsActivity.class);
+		return data;
+	}
 	
-	setListAdapter(ap);
+	
+
+	public void addItem(ArrayList<HashMap<String, Object>> data, String name, Class<?> c) {
+		addItem(data, name, new Intent(this, c));
+	} 
+	
+	public void addItem(ArrayList<HashMap<String,Object>> data,String name,Intent intent){
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("title", name);
+		map.put("intent", intent);
+		data.add(map);
 	}
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
 		
-		switch (position) {
+		@SuppressWarnings("unchecked")
+		HashMap<String, Object> map = (HashMap<String, Object>) l.getItemAtPosition(position);
+		Intent intent = (Intent) map.get("intent");
+		startActivity(intent);
+
 		
-		case 0:
-			startActivity(new Intent(this,LayoutAll.class));
-			break;
-		case 1:
-			startActivity(new Intent(this,Button_color.class));
-			break;
-		case 2:
-			startActivity(new Intent(this,TestCodeActvity.class));
-			break;
-		case 3:
-			startActivity(new Intent(this,EidtViewTest.class));
-			break;
-		case 4:
-			startActivity(new Intent(this,EventButton.class));
-			break;
-		case 5:
-			startActivity(new Intent(this,ImageViewTest.class));
-			break;
-		case 6:
-			startActivity(new Intent(this,SexRadioButton.class));
-			break;
-		case 7:
-			startActivity(new Intent(this,CheckBoxTest.class));
-			break;
-		case 8:
-			startActivity(new Intent(this,Logcat_Switch.class));
-			break;
-		case 9:
-			startActivity(new Intent(this,SaveInstanceTest.class));
-			break;
-		case 10:
-			startActivity(new Intent(this,OnStartActivityExtraBundleA.class));
-			break;
-		case 11:
-			startActivity(new Intent(this,IntentCallPhone.class));
-			break;
-		case 12:
-			startActivity(new Intent(this,Event_ArrayAdapter.class));
-			break;
-		case 13:
-			startActivity(new Intent(this,Event_SimpleAdapter.class));
-			break;
-		case 14:
-			startActivity(new Intent(this,MyAdpater_Test.class));
-			break;
-		case 15:
-			startActivity(new Intent(this,MyPractiveAdapter.class));
-			break;
-		case 16:
-			startActivity(new Intent(this,GridViewAdapter.class));
-			break;
-		case 17:
-			startActivity(new Intent(this,GridViewTextAdapter.class));
-			break;
-		case 18:
-			startActivity(new Intent(this,ViewPagerAdapter.class));
-			break;
-		case 19:
-			startActivity(new Intent(this,ProgessSeekBar.class));
-			break;
-		case 20:
-			startActivity(new Intent(this,AlertDialogBasic.class));
-			break;
-		case 21:
-			startActivity(new Intent(this,TabActivityTest.class));
-			break;
-		case 22:
-			startActivity(new Intent(this,StartImageActivity.class));
-			break;
-		case 23:
-			startActivity(new Intent(this,ContextMenuActivityTest.class));
-			break;
-		case 24:
-			startActivity(new Intent(this,ShapeActivity.class));
-			break;
-		case 25:
-			startActivity(new Intent(this,PopupWindowActivity.class));
-			break;
-		case 26:
-			startActivity(new Intent(this,HandlerMessage.class));
-			break;
-		case 27:
-			startActivity(new Intent(this,CallBackActivityTest.class));
-			break;
-		case 28:
-			startActivity(new Intent(this,DBActivity.class));
-			break;
-		case 29:
-			startActivity(new Intent(this,SendImageStore.class));
-			break;
-		}
+		
 	}
 }

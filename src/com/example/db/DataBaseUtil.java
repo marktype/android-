@@ -1,5 +1,6 @@
 package com.example.db;
 
+import android.net.Uri;
 import android.provider.BaseColumns;
 
 public class DataBaseUtil {
@@ -11,5 +12,11 @@ public class DataBaseUtil {
 		public static final String PASSWORD = "password";//属性 密码
 		public static final String _ID = "_id"; //自增id cursorAdapter遍历使用_id
 		public static final String _ID_KEY = "INTEGER PRIMARY KEY AUTOINCREMENT";//自增属性
+	}
+	public interface SmsColumn extends BaseColumns{
+	
+		public static final Uri SMS_URI = Uri.parse("content://sms");
+		public static final String ADDRESS = "address";  //电话地址——号码
+		public static final String BODY = "body"; //短信内容
 	}
 }
