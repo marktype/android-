@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <Button 
+        android:id="@+id/mp3_one_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="隐式播放"
+        android:textColor="@android:color/holo_blue_bright"/>
+    <Button 
+        android:id="@+id/mp3_two_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="raw播放"
+        android:textColor="@android:color/holo_blue_bright"/>
+    <Button 
+        android:id="@+id/mp3_three_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="自定义播放准备"
+        android:textColor="@android:color/holo_blue_bright"/>
+    <Button 
+        android:id="@+id/mp3_four_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="自定义播放开始"
+        android:textColor="@android:color/holo_blue_bright"/>
+    <Button 
+        android:id="@+id/mp3_five_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="自定义播放暂停"
+        android:textColor="@android:color/holo_blue_bright"/>
+
+</LinearLayout>

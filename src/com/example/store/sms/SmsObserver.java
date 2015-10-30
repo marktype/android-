@@ -8,6 +8,7 @@ import android.database.ContentObserver;
 import android.database.Cursor;
 import android.os.Handler;
 import android.os.Message;
+import android.widget.Toast;
 
 public class SmsObserver extends ContentObserver {
 
@@ -31,7 +32,7 @@ public class SmsObserver extends ContentObserver {
 		Cursor cursor = context.getContentResolver().query(DataBaseUtil.SmsColumn.SMS_URI,
 				projection, "address = ?", new String[]{"111"}, null);
 		if (cursor.getCount() > 0) {
-			while (cursor.moveToNext()) {
+			cursor.moveToFirst();    //监听刚收到的一条信息,不用循环发送
 				String address = cursor.getString(cursor.getColumnIndex("address"));
 				String body = cursor.getString(cursor.getColumnIndex("body"));
 				mInfo.setAddress(address);
@@ -41,7 +42,7 @@ public class SmsObserver extends ContentObserver {
 				msg.what = 111;//信息标记
 				msg.obj = mInfo;
 				mHandler.sendMessage(msg);
-			}
+			
 		}
 		
 	}

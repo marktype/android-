@@ -98,6 +98,7 @@
         <activity android:name="com.example.db.CousorActivity" />
         <activity android:name="com.example.store.file.SendImageStore" />
          <activity android:name="com.example.store.sms.SmsActivity" />
+         <activity android:name="com.example.mediaplay.Mp3PlayActivity" />
         <provider android:name="com.example.store.DBProvider.ContentProviderTest"
             android:authorities="com.example.layout"></provider>
     </application>

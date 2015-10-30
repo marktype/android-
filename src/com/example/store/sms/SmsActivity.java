@@ -18,11 +18,11 @@ public class SmsActivity extends Activity {
 	private Button mSmsListenBtn;
 	private information mInfo;
 	private Handler mHandler = new Handler(){
-		public void handleMessage(android.os.Message msg) {
+		public void handleMessage(android.os.Message msg) {     //handler处理信息（两个activity之间传递）
 			switch(msg.what){
 			case 111:
 				mInfo = (information) msg.obj;
-				mSmsMessageTxt.setText(mInfo.getAddress()+"\t"+mInfo.getBody());
+				mSmsMessageTxt.setText("号码："+mInfo.getAddress()+"\t"+"信息："+mInfo.getBody());
 				break;
 			}
 		};
@@ -40,8 +40,9 @@ public class SmsActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				mSmsMessageTxt.setText("正在监听...");
 				Uri uri = Uri.parse("content://sms");  //解析短信
-//				Handler handler =  new Handler();
+				//短信观察者注册监听
 				SmsObserver observer = new SmsObserver(SmsActivity.this,mHandler);
 				getContentResolver().registerContentObserver(uri, true, observer);
 			}
