@@ -18,7 +18,7 @@ import android.widget.Toast;
 public class Mp3PlayActivity extends Activity implements OnClickListener {
 
 	private Button mOneBtn, mTwoBtn, mThreeBtn,mFourBtn, mFiveBtn;
-	private MediaPlayer mediaPlayer = new MediaPlayer();
+	private MediaPlayer mMediaPlayer = new MediaPlayer();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -61,6 +61,9 @@ public class Mp3PlayActivity extends Activity implements OnClickListener {
 
 	}
 
+	/*
+	 * 隐式调用
+	 * */
 	public void mediaPlayOne() {
 		Uri uri = Uri.parse("file://"
 				+ Environment.getExternalStorageDirectory()
@@ -70,14 +73,17 @@ public class Mp3PlayActivity extends Activity implements OnClickListener {
 		startActivity(intent);
 	}
 
+	/*
+	 * 自定义播放，调用文件（file：//）
+	 * */
 	public void mediaPlayOwn() {
 		
 		try {
-			mediaPlayer.setDataSource("file://"
+			mMediaPlayer.setDataSource("file://"
 					+ Environment.getExternalStorageDirectory()
 					+ "/music/blmzm.mp3");
 			
-			mediaPlayer.prepare();
+			mMediaPlayer.prepare();
 			Toast.makeText(this, "准备好了，可以开始", Toast.LENGTH_SHORT).show();
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
@@ -90,6 +96,9 @@ public class Mp3PlayActivity extends Activity implements OnClickListener {
 		}
 	}
 	
+	/*
+	 * 通过raw调用，（create为将其他方法封装后的结果）
+	 * */
 	public void mediaPlayTwo(){
 		MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.ykzzldygx);
 			
@@ -97,9 +106,9 @@ public class Mp3PlayActivity extends Activity implements OnClickListener {
 	}
 	
 	public void start(){
-		mediaPlayer.start();
+		mMediaPlayer.start();
 	}
 	public void pause(){
-		mediaPlayer.pause();
+		mMediaPlayer.pause();
 	}
 }

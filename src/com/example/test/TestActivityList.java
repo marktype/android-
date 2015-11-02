@@ -20,6 +20,7 @@ import com.example.handler.HandlerMessage;
 import com.example.layout.LayoutAll;
 import com.example.layout.TestCodeActvity;
 import com.example.mediaplay.Mp3PlayActivity;
+import com.example.server.ServerActivity;
 import com.example.store.file.SendImageStore;
 import com.example.store.sms.SmsActivity;
 import com.example.ui.adapter.Event_ArrayAdapter;
@@ -94,7 +95,7 @@ public class TestActivityList extends ListActivity {
 		addItem(data, "file文件存储", SendImageStore.class);
 		addItem(data, "短信监听", SmsActivity.class);
 		addItem(data, "MP3播放", Mp3PlayActivity.class);
-		
+		addItem(data, "ServerActivity", ServerActivity.class);
 		
 		
 		return data;
