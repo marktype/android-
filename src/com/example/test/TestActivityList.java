@@ -14,6 +14,7 @@ import com.example.activity.IntentCallPhone;
 import com.example.activity.OnStartActivityExtraBundleA;
 import com.example.activity.SaveInstanceTest;
 import com.example.basicinfo.ActivityExitAll;
+import com.example.broadcast.BroadCastActivity;
 import com.example.callback.CallBackActivityTest;
 import com.example.db.DBActivity;
 import com.example.handler.HandlerMessage;
@@ -96,7 +97,7 @@ public class TestActivityList extends ListActivity {
 		addItem(data, "短信监听", SmsActivity.class);
 		addItem(data, "MP3播放", Mp3PlayActivity.class);
 		addItem(data, "ServerActivity", ServerActivity.class);
-		
+		addItem(data, "广播", BroadCastActivity.class);
 		
 		return data;
 	}
