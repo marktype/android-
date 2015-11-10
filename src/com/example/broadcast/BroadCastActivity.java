@@ -60,6 +60,7 @@ public class BroadCastActivity extends Activity {
 			unregisterReceiver(receiver);  //取消注册
 		}
 	}
+	
 	/*
 	 * 动态注册广播
 	 * */
