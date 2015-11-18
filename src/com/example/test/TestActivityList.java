@@ -13,14 +13,18 @@ import android.widget.SimpleAdapter;
 import com.example.activity.IntentCallPhone;
 import com.example.activity.OnStartActivityExtraBundleA;
 import com.example.activity.SaveInstanceTest;
+import com.example.asynctask.AsyncTaskActivity;
+import com.example.asynctask.DownLoadActivity;
 import com.example.basicinfo.ActivityExitAll;
 import com.example.broadcast.BroadCastActivity;
 import com.example.callback.CallBackActivityTest;
 import com.example.db.DBActivity;
 import com.example.handler.HandlerMessage;
+import com.example.http.HttpActivity;
 import com.example.layout.LayoutAll;
 import com.example.layout.TestCodeActvity;
 import com.example.mediaplay.Mp3PlayActivity;
+import com.example.notification.NotifyActivity;
 import com.example.server.ServerActivity;
 import com.example.store.file.SendImageStore;
 import com.example.store.sms.SmsActivity;
@@ -37,6 +41,7 @@ import com.example.ui.menu.ContextMenuActivityTest;
 import com.example.ui.menu.PopupWindowActivity;
 import com.example.ui.shape.ShapeActivity;
 import com.example.ui.tab.TabActivityTest;
+import com.example.ui.webview.MyWebViewActivity;
 import com.example.ui.widget.Button_color;
 import com.example.ui.widget.CheckBoxTest;
 import com.example.ui.widget.EidtViewTest;
@@ -98,6 +103,11 @@ public class TestActivityList extends ListActivity {
 		addItem(data, "MP3播放", Mp3PlayActivity.class);
 		addItem(data, "ServerActivity", ServerActivity.class);
 		addItem(data, "广播", BroadCastActivity.class);
+		addItem(data, "Notification", NotifyActivity.class);
+		addItem(data, "AsyncTaskActivity", AsyncTaskActivity.class);
+		addItem(data, "DownLoadActivity", DownLoadActivity.class);
+		addItem(data, "WebView", MyWebViewActivity.class);
+		addItem(data, "http服务", HttpActivity.class);
 		
 		return data;
 	}
