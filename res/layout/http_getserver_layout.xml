@@ -10,6 +10,18 @@
         android:layout_height="wrap_content"
         android:text="发送服务请求" />
 
+     <Button
+        android:id="@+id/http_send_client_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="httpclient 请求" />
+     
+     <Button
+        android:id="@+id/http_util_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="httpUtil封装" />
+    
     <TextView
         android:id="@+id/http_getback_txt"
         android:layout_width="match_parent"

@@ -18,6 +18,7 @@ import android.widget.Toast;
 public class MyWebViewActivity extends Activity {
 	private WebView mWebView;
 	private String url = "http://192.168.1.132:8080/test/getmarry.html";
+//	private String url = "https://www.baidu.com/";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
