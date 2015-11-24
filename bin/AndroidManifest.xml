@@ -24,7 +24,8 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
 	<!-- 访问网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    
+    <!-- 接收网络状态权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -116,6 +117,8 @@
         <activity android:name="com.example.asynctask.DownLoadActivity" />
 		<activity android:name="com.example.ui.webview.MyWebViewActivity" />
 		<activity android:name="com.example.http.HttpActivity" />
+		<activity android:name="com.example.http.ParseHttpData" />
+		<activity android:name="com.example.xmlparse.XmlParseActivity" />
 		
 		
         <provider

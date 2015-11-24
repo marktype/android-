@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<books>
+    <book>
+       <id>100</id>
+       <name>android学习</name>
+       <price>20</price>
+    </book>
+    
+    <book>
+        <id>101</id>
+        <name>好好学习，天天向上</name>
+        <price>12.2</price>
+    </book>
+</books>

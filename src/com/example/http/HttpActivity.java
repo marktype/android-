@@ -34,6 +34,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.basicinfo.HttpConnetUtil;
+import com.example.basicinfo.Logs;
 import com.example.basicinfo.HttpConnetUtil.HttpConnectCallBack;
 import com.example.layout.R;
 
@@ -71,7 +72,18 @@ public class HttpActivity extends Activity implements OnClickListener {
 			// AsyncTaskByHttpClientByGet(); // get传参
 			break;
 		case R.id.http_util_btn:
-			UserLogin();
+//			UserLogin();
+			
+			HttpConnetUtil connetUtil = new HttpConnetUtil();
+			connetUtil.httpConnet("http://192.168.1.172:8080/qw/1.txt", null, "GET", new HttpConnectCallBack() {
+				
+				@Override
+				public void backMessage(String message) {
+					Logs.d(message);
+				}
+			});
+			
+			
 			break;
 		}
 

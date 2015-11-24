@@ -129,7 +129,7 @@ public class HttpConnetUtil {
 			}
 			HttpResponse res = client.execute(post);
 			if (res.getStatusLine().getStatusCode() == HttpURLConnection.HTTP_OK) {
-				result = EntityUtils.toString(res.getEntity()); // 获取从服务器端发送的值
+				result = EntityUtils.toString(res.getEntity(),HTTP.UTF_8); // 获取从服务器端发送的值
 				
 			}else {
 				result = "网络出错";
@@ -153,9 +153,9 @@ public class HttpConnetUtil {
 		String result = null;
 		try {
 			HttpResponse res = client.execute(get);
-			
+			Logs.e("code---"+res.getStatusLine().getStatusCode());
 			if (res.getStatusLine().getStatusCode() == HttpURLConnection.HTTP_OK) {
-				result = EntityUtils.toString(res.getEntity()); // 获取从服务器端发送的值
+				result = EntityUtils.toString(res.getEntity(),HTTP.UTF_8); // 获取从服务器端发送的值
 				
 			}else {
 				result = "网络出错";

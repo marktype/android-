@@ -21,6 +21,7 @@ import com.example.callback.CallBackActivityTest;
 import com.example.db.DBActivity;
 import com.example.handler.HandlerMessage;
 import com.example.http.HttpActivity;
+import com.example.http.ParseHttpData;
 import com.example.layout.LayoutAll;
 import com.example.layout.TestCodeActvity;
 import com.example.mediaplay.Mp3PlayActivity;
@@ -50,6 +51,7 @@ import com.example.ui.widget.ImageViewTest;
 import com.example.ui.widget.Logcat_Switch;
 import com.example.ui.widget.SexRadioButton;
 import com.example.ui.widget.bar.ProgessSeekBar;
+import com.example.xmlparse.XmlParseActivity;
 
 public class TestActivityList extends ListActivity {
 	@Override
@@ -108,6 +110,8 @@ public class TestActivityList extends ListActivity {
 		addItem(data, "DownLoadActivity", DownLoadActivity.class);
 		addItem(data, "WebView", MyWebViewActivity.class);
 		addItem(data, "http服务", HttpActivity.class);
+		addItem(data, "ParseHttpData", ParseHttpData.class);
+		addItem(data, "XmlParseActivity", XmlParseActivity.class);
 		
 		return data;
 	}
