@@ -27,7 +27,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v4.util.LruCache;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,9 +39,10 @@ import android.widget.TextView;
 
 public class ParseHttpData extends Activity {
 	private ListView mContentList;
+	private	LruCache<String, Bitmap> mMemoryCache;
 	// private TextView mNameTxt,mContentTxt,mAddressTxt,mDistenceTxt;
-	private String url = "http://192.168.1.172:8080/qw/around";
-	private ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
+	private String url = "http://192.168.1.165:8080/qw/around";
+//	private ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
 	private PractiveAdapter adapter;
 
 	@Override
@@ -49,7 +50,7 @@ public class ParseHttpData extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.http_parse_data_layout);
-
+		initLruCache();//初始化内存
 		mContentList = (ListView) findViewById(R.id.http_listview);
 		adapter = new PractiveAdapter(this);
 
@@ -243,20 +244,20 @@ public class ParseHttpData extends Activity {
 			viewHolder.distance.setText(distance);
 
 			//此处必须加if，else加载显示与隐藏，若只有一个则会出现图片显示错乱的情况
-			if (groupType.equalsIgnoreCase("NO")) {
-				viewHolder.iconTuan.setVisibility(View.GONE);
-			}else {
-				viewHolder.iconTuan.setVisibility(View.VISIBLE);
+			if (couponType.equalsIgnoreCase("NO")) {
+				viewHolder.iconQuan.setVisibility(View.GONE);
+			}else{
+				viewHolder.iconQuan.setVisibility(View.VISIBLE);
 			}
 			if (cardType.equalsIgnoreCase("NO")) {
 				viewHolder.iconImageCard.setVisibility(View.GONE);
 			}else {
 				viewHolder.iconImageCard.setVisibility(View.VISIBLE);
 			}
-			if (couponType.equalsIgnoreCase("NO")) {
-				viewHolder.iconQuan.setVisibility(View.GONE);
-			}else{
-				viewHolder.iconQuan.setVisibility(View.VISIBLE);
+			if (groupType.equalsIgnoreCase("NO")) {
+				viewHolder.iconTuan.setVisibility(View.GONE);
+			}else {
+				viewHolder.iconTuan.setVisibility(View.VISIBLE);
 			}
 
 			return convertView;
@@ -266,6 +267,39 @@ public class ParseHttpData extends Activity {
 			ImageView iconImageitem, iconImageCard, iconQuan, iconTuan;
 			TextView name, coupon, location, distance;
 		}
+	}
+	
+	/**
+	 * 初始化LRUCache
+	 */
+	public void initLruCache(){
+		// 获取应用程序最大可用内存
+		int maxMemory = (int) Runtime.getRuntime().maxMemory();
+		int cacheSize = maxMemory / 8;
+		// 设置图片缓存大小为程序最大可用内存的1/8
+		mMemoryCache = new LruCache<String, Bitmap>(cacheSize) {
+			@Override
+			protected int sizeOf(String key, Bitmap bitmap) {
+				return bitmap.getByteCount();
+			}
+		};
+	}
+	/**
+	 * 添加图片到内存缓存
+	 */
+	public void addBitmapToCache(String url,Bitmap bitmap){
+		if(getCacheBitmap(url) == null){
+			mMemoryCache.put(url, bitmap);
+		}
+	}
+	/**
+	 * 从缓存中获取图片
+	 * @param url
+	 * @return
+	 */
+	public Bitmap getCacheBitmap(String url){
+		Bitmap bitmap = mMemoryCache.get(url);
+		return bitmap;
 	}
 	
 	/**
@@ -282,6 +316,13 @@ public class ParseHttpData extends Activity {
 	public void loadBitmap(Resources res, String imageUrl, ImageView imageView,
 			int resId) {
 
+		// 第一步：根据图片地址，判断图片是否被缓存在内存
+				Bitmap bitmap = getCacheBitmap(imageUrl);
+				if(bitmap != null){
+					imageView.setImageBitmap(bitmap);
+					Logs.v("从内存获取图片");
+					return;
+				}
 		if (cancelPotentialWork(imageUrl, imageView)) {
 			BitmapWorkerTask task = new BitmapWorkerTask(imageView);
 
@@ -373,6 +414,7 @@ public class ParseHttpData extends Activity {
 				final BitmapWorkerTask bitmapWorkerTask = getBitmapWorkerTask(imageView);
 				if (this == bitmapWorkerTask && imageView != null) {
 					imageView.setImageBitmap(bitmap);
+					addBitmapToCache(data, bitmap);   //添加图片到缓存
 				}
 			}
 		}

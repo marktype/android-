@@ -2,10 +2,12 @@ package com.example.xmlparse;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringWriter;
 import java.util.ArrayList;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlSerializer;
 
 import com.example.basicinfo.Logs;
 
@@ -19,6 +21,7 @@ public class XmlParseTest extends AndroidTestCase {
 		super.setUp();
 	}
 
+	//将xml文件转换为数据
 	public void xmlParseTest() throws IOException, XmlPullParserException{
 		XmlPullParser pullParser = Xml.newPullParser();
 		InputStream is = getContext().getAssets().open("parse.xml");   //解析文本
@@ -60,5 +63,56 @@ public class XmlParseTest extends AndroidTestCase {
 			Logs.d("books-----id"+books2.getId()+",name--"+books2.getName());
 		}
 		
+	}
+	
+	//将数据转换为xml字符串
+	public void serialize() throws IllegalArgumentException, IllegalStateException, IOException{
+		XmlSerializer serializer = Xml.newSerializer();
+		ArrayList<Books> bookList = new ArrayList<Books>();
+		Books books = new Books();
+		books.setId(12);
+		books.setName("android解析xml学习1");
+		books.setPrice(23.3);
+		bookList.add(books);
+		
+		books = new Books();
+		books.setId(13);
+		books.setName("android解析xml学习2");
+		books.setPrice(24.3);
+		bookList.add(books);
+		
+		books = new Books();
+		books.setId(14);
+		books.setName("android解析xml学习3");
+		books.setPrice(25.3);
+		bookList.add(books);
+		
+		StringWriter os = new StringWriter();
+		
+		serializer.setOutput(os);
+		serializer.startDocument("UTF-8", true);
+		serializer.startTag("", "books");
+		
+		for (Books books2 : bookList) {
+			serializer.startTag("", "book");
+			
+			serializer.startTag("", "id");
+			serializer.text(books2.getId()+"");
+			serializer.endTag("", "id");
+			
+			serializer.startTag("", "name");
+			serializer.text(books2.getName());
+			serializer.endTag("", "name");
+			
+			serializer.startTag("", "price");
+			serializer.text(books2.getPrice()+"");
+			serializer.endTag("", "price");
+			
+			serializer.endTag("", "book");
+		}
+		serializer.endTag("", "books");
+		serializer.endDocument();
+		
+		Logs.d(""+os.toString());
 	}
 }

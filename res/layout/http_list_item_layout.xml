@@ -79,18 +79,18 @@
         <ImageView android:layout_width="15dp"
             android:layout_height="15dp"
             android:id="@+id/http_right_tuan_image"
-            android:src="@drawable/near_group"
+            android:src="@drawable/near_ticket"
             />
         
         <ImageView android:layout_width="15dp"
             android:layout_height="15dp"
             android:id="@+id/http_right_quan_image"
-            android:src="@drawable/near_ticket"
+            android:src="@drawable/near_card"
             />
         <ImageView android:layout_width="15dp"
             android:layout_height="15dp"
             android:id="@+id/http_right_card_image"
-            android:src="@drawable/near_card"
+            android:src="@drawable/near_group"
             />
     </LinearLayout>
 
