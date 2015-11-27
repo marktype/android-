@@ -41,7 +41,7 @@ public class ParseHttpData extends Activity {
 	private ListView mContentList;
 	private	LruCache<String, Bitmap> mMemoryCache;
 	// private TextView mNameTxt,mContentTxt,mAddressTxt,mDistenceTxt;
-	private String url = "http://192.168.1.165:8080/qw/around";
+	private String url = "http://192.168.1.129:8080/qw/around";
 //	private ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
 	private PractiveAdapter adapter;
 
@@ -80,8 +80,6 @@ public class ParseHttpData extends Activity {
 	 * 解析数据信息,获取数据源
 	 */
 	public ArrayList<HashMap<String, Object>> parseHttpData(String str) {
-		// ArrayList<HashMap<String, Object>> list = new
-		// ArrayList<HashMap<String,Object>>();
 		ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
 		try {
 			JSONObject object = new JSONObject(str);
@@ -175,6 +173,7 @@ public class ParseHttpData extends Activity {
 		public long getItemId(int arg0) {
 			// TODO Auto-generated method stub
 			return arg0;
+			
 		}
 
 		@Override
@@ -244,6 +243,11 @@ public class ParseHttpData extends Activity {
 			viewHolder.distance.setText(distance);
 
 			//此处必须加if，else加载显示与隐藏，若只有一个则会出现图片显示错乱的情况
+			if (groupType.equalsIgnoreCase("NO")) {
+				viewHolder.iconTuan.setVisibility(View.GONE);
+			}else {
+				viewHolder.iconTuan.setVisibility(View.VISIBLE);
+			}
 			if (couponType.equalsIgnoreCase("NO")) {
 				viewHolder.iconQuan.setVisibility(View.GONE);
 			}else{
@@ -254,11 +258,7 @@ public class ParseHttpData extends Activity {
 			}else {
 				viewHolder.iconImageCard.setVisibility(View.VISIBLE);
 			}
-			if (groupType.equalsIgnoreCase("NO")) {
-				viewHolder.iconTuan.setVisibility(View.GONE);
-			}else {
-				viewHolder.iconTuan.setVisibility(View.VISIBLE);
-			}
+			
 
 			return convertView;
 		}

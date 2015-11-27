@@ -47,10 +47,5 @@ public class FastJsonTest extends AndroidTestCase {
 			}
 			
 		}
-		
-		
-		
-		
-		
 	}
 }

@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.BreakIterator;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,8 +49,9 @@ public class JsonTest extends AndroidTestCase {
 		
 		StringBuffer stringBuffer = new StringBuffer();
 		String line = null ;
+		BufferedReader br = null;
 		try {
-		BufferedReader br = new BufferedReader(new FileReader(new File("json.txt")));
+			br = new BufferedReader(new FileReader(new File("json.txt")));
 		while( (line = br.readLine())!= null ){
 		stringBuffer.append(line);
 		} 
@@ -59,7 +61,12 @@ public class JsonTest extends AndroidTestCase {
 		} catch (IOException e) {
 		e.printStackTrace();
 		}finally{
-			
+			try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 	
@@ -105,11 +112,15 @@ public class JsonTest extends AndroidTestCase {
 		object.put("name", "张三");
 		object.put("password", "123");
 		JSONObject object2 = new JSONObject();
-		object2.put("name", "张三");
-		object2.put("password", "123");
+		object2.put("name", "李四");
+		object2.put("password", "456");
 		
 		JSONArray array = new JSONArray();
 		array.put(0, object);
 		array.put(1, object2);
+		
+		JSONObject json = new JSONObject();
+		json.put("array", array);
+		Logs.d(json.toString());
 	}
 }

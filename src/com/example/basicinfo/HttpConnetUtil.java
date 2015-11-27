@@ -83,6 +83,7 @@ public class HttpConnetUtil {
 					@Override
 					protected String doInBackground(String... params) {
 						String httpUrl = parseUserInfoByGet(params[0], map);
+						Logs.d("httpUrl--"+httpUrl);
 						String result = HttpGetCon(httpUrl);
 						return result;
 					}
@@ -102,6 +103,7 @@ public class HttpConnetUtil {
 						return result;
 					}
 					protected void onPostExecute(String result) {
+						Logs.d("result--"+result);
 						message.backMessage(result);
 					};
 				}.execute(url);
@@ -150,6 +152,7 @@ public class HttpConnetUtil {
 	public String HttpGetCon(String httpUrl) {
 		HttpClient client = new DefaultHttpClient();
 		HttpGet get = new HttpGet(httpUrl);
+		Logs.d("get--"+get);
 		String result = null;
 		try {
 			HttpResponse res = client.execute(get);

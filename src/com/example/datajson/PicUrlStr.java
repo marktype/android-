@@ -14,8 +14,4 @@ public class PicUrlStr {
 		this.picUrl = picUrl;
 	}
 
-	
-
-	
-
 }

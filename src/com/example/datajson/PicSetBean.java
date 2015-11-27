@@ -13,8 +13,4 @@ public class PicSetBean {
 	public void setPicSet(ArrayList<PicUrl> picSet) {
 		this.picSet = picSet;
 	}
-
-	
-
-	
 }

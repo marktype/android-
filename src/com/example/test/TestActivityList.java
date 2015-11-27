@@ -19,7 +19,10 @@ import com.example.basicinfo.ActivityExitAll;
 import com.example.broadcast.BroadCastActivity;
 import com.example.callback.CallBackActivityTest;
 import com.example.db.DBActivity;
+import com.example.flash.AnotherFlashDwonActivity;
+import com.example.flash.FlashDwonActivity;
 import com.example.handler.HandlerMessage;
+import com.example.http.AnotherParseHttpData;
 import com.example.http.HttpActivity;
 import com.example.http.ParseHttpData;
 import com.example.layout.LayoutAll;
@@ -111,7 +114,11 @@ public class TestActivityList extends ListActivity {
 		addItem(data, "WebView", MyWebViewActivity.class);
 		addItem(data, "http服务", HttpActivity.class);
 		addItem(data, "ParseHttpData", ParseHttpData.class);
+		addItem(data, "AnotherParseHttpData", AnotherParseHttpData.class);
 		addItem(data, "XmlParseActivity", XmlParseActivity.class);
+		addItem(data, "下拉刷新", FlashDwonActivity.class);
+		addItem(data, "改进下拉刷新", AnotherFlashDwonActivity.class);
+		
 		
 		return data;
 	}
