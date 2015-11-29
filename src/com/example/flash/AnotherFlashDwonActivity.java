@@ -1,6 +1,8 @@
 package com.example.flash;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 import org.json.JSONArray;
@@ -36,6 +38,7 @@ public class AnotherFlashDwonActivity extends Activity implements IXListViewList
 	private int currentPage = 1;
 	private Handler mHandler;
 	private int totalPage;
+	private SimpleDateFormat format = new SimpleDateFormat("yyyy:MM:dd-HH:mm:ss");
 	private String url = "http://192.168.1.129:8080/app/ttt";
 //	private String url = "http://192.168.1.145/app/page?pageNo=1&pageSize=20";
 	@Override
@@ -85,7 +88,8 @@ public class AnotherFlashDwonActivity extends Activity implements IXListViewList
 					}else{
 						adapter.addlist(list);   //添加数据到适配器
 					}
-					
+					//设置当前时间
+					mFlashListView.setRefreshTime(format.format(new Date(System.currentTimeMillis())));
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
